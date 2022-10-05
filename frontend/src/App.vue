@@ -1,49 +1,58 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import type { Ref } from 'vue';
+import DetailedProjectVue from './DetailedProject.vue';
+import Home from './Home.vue';
 
-const listItems = ref([]);
+const routes:any = {'/home': Home}
+const projectsList:Ref = ref([]);
+
+const  currentPath = ref(window.location.hash)
+
+window.addEventListener('hashchange', () => {
+   currentPath.value = window.location.hash; 
+})
+
+const currentView = computed(() => {
+
+    if( /^\/project-[0-9]+$/.test(currentPath.value.slice(1)) ){ // project-<any-number>, for example: project-2
+       return DetailedProjectVue; 
+    }
+    window.location.hash = '/home';
+    return routes[currentPath.value.slice(1) || '/home'] || Home // Be not found in the future 
+})
 
 async function show(){
-    const api = await fetch(import.meta.env.VITE_LOCALHOST + '/api/v1/test')
-    const res = await api.json();
-    listItems.value = res 
+    const resObj = await fetch(import.meta.env.VITE_LOCALHOST + '/api/v1/projects')
+    const data = await resObj.json();
+
+    projectsList.value = data; 
 }
-
 show();
-
 </script>
 
 <template>
-    <p>Hi, patrick.</p>
-    {{ listItems }}
-    <a href="#oi">skdlfjlskdjfklsdjflk</a>
+    <h1>Header</h1>
+
+    <!-- <div class="detailed-post" v-html="listItems[0].content"> -->
+        <!-- </div> -->
+
+    <a href="#/home">go home</a>
+     
+    <component v-bind:projects="projectsList" v-bind:is="currentView" />
+
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
+
+.detailed-post{
+    width:50%;
+    background-color: rgb(250, 200, 200);
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.detailed-post :deep(img){
+    width: 500px;
+    display: block;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
