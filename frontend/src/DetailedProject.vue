@@ -6,6 +6,7 @@ type Project = {
     title?: string;
     content?: string;
     video?: string;
+    lang?:'en'|'pt';
 }
 const project:Ref<Project> = ref({});
 

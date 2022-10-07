@@ -1,11 +1,12 @@
 <script setup lang="ts">
+// This is the 'mother' component, it's job is to provide the routes and components based on the user's chosen language
 import { ref, computed } from 'vue';
-import type { Ref } from 'vue';
 import DetailedProjectVue from './DetailedProject.vue';
 import Home from './Home.vue';
+import NotFound from './NotFound.vue';
+import HomePt from './HomePt.vue';
 
-const routes:any = {'/home': Home}
-const projectsList:Ref = ref([]);
+const routes:any = {'/home': Home, '/home-pt': HomePt}
 
 const  currentPath = ref(window.location.hash)
 
@@ -18,28 +19,20 @@ const currentView = computed(() => {
     if( /^\/project-[0-9]+$/.test(currentPath.value.slice(1)) ){ // project-<any-number>, for example: project-2
        return DetailedProjectVue; 
     }
-    window.location.hash = '/home';
-    return routes[currentPath.value.slice(1) || '/home'] || Home // Be not found in the future 
-})
 
-async function show(){
-    const resObj = await fetch(import.meta.env.VITE_LOCALHOST + '/api/v1/projects')
-    const data = await resObj.json();
+    return routes[currentPath.value.slice(1) || '/home'] || NotFound // Be not found in the future 
+});
 
-    projectsList.value = data; 
-}
-show();
 </script>
 
 <template>
-    <h1>Header</h1>
+    <h1>Choose your lang</h1>
 
-    <!-- <div class="detailed-post" v-html="listItems[0].content"> -->
-        <!-- </div> -->
-
-    <a href="#/home">go home</a>
+    <a href="#/home">English</a>
+    <br>
+    <a href="#/home-pt">Português</a>
      
-    <component v-bind:projects="projectsList" v-bind:is="currentView" />
+    <component :is="currentView" />
 
 </template>
 
