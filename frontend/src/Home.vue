@@ -8,8 +8,6 @@ const projectsList:Ref<Project[]> = ref([]);
 
 async function postsResolve(){
     projectsList.value = await endpoint.getAllData('en');
-
-    console.log(projectsList.value[0].brief);
 }
 
 postsResolve();

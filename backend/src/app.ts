@@ -3,9 +3,15 @@ const fs = require('fs');
 const path = require('path');
 import { IncomingMessage, ServerResponse } from 'http';
 import { getContentType } from './filesUtils';
+import { dataSource } from './get-data-source';
+import { DetailedProject } from './entity/DetailedProject';
+import dotenv  from 'dotenv';
+dotenv.config();
 
 const port = 3000;
 const hostname = 'localhost';
+
+dataSource;
 
 const dummyData = [{                                                                                  
                     "title": "Calculadora com graficos 3D",                                        
@@ -26,7 +32,7 @@ const dummyData = [{
                     id:2
                 }]
 
-const server = http.createServer((req:IncomingMessage, res:ServerResponse) =>{
+const server = http.createServer( async (req:IncomingMessage, res:ServerResponse) =>{
     
     let filePath = path.join(__dirname, 'frontend', req.url === '/' ? 'index.html': req.url)
     let extname = path.extname(filePath);
@@ -67,7 +73,30 @@ const server = http.createServer((req:IncomingMessage, res:ServerResponse) =>{
         }
     }
     if (req.method === 'POST'){
-       res.end() 
+
+        let data = '';
+        req.on('data', chunk => { // getting body data
+            data += chunk
+        })
+
+        req.on('end', async () => { // body data done
+
+            if ((req.url as string).toLowerCase() === '/api/v1/createproject'){
+                // get body data...
+                const testPost = new DetailedProject();
+                testPost.brief = 'sei la this is short';
+                testPost.content = 'this is a lot of texxxxxxxtttttt';
+                testPost.lang = 'en';
+                testPost.title = 'Calculator with 3 graphics';
+                testPost.technologies = ['typeorm', 'nodejs', 'typescript']
+                testPost.videoUrl = 'https://www.youtube.com/watch?v=9gXtkG8jOHY'
+
+                await dataSource.getRepository(DetailedProject).save(testPost); 
+                res.end(data);
+                return
+            }
+        })
+
     }
     if (req.method === 'PUT'){
         res.end()
