@@ -1,0 +1,29 @@
+[
+    {                                                                                  
+        "id": 1,                                                                       
+        "title": "Files to Sent",                                        
+        "content": "Esse projecto possui um história interssante. Tudo começou quando eu tive a ideia de criar um sistema que enviasse automaticamente arquivos para pessoas no WhatsApp\"t <img src=\"https://i.imgur.com/WlIyo8Z.png\" alt=\"Picture of anime\">Hola\nTeste",
+        "technologies": ["Typeorm", "Postgres", "Vue.js", "Typescript", "Node", "Argon2", "Nodemailer"],                              
+        "brief":"Vocẽ pode jogar com un el nino",                   
+        "video": "https://www.youtube.com/embed/9gXtkG8jOHY",                        
+        "lang":"pt"
+    }, 
+    { 
+        "id":2,
+        "title": "Files to Sent",
+        "content": "This project has a very interesting story. It all started when I wanted to create an application that would send automatic files through WhatsApp, so to do that I would need a couple things like: An API, my own API, a Security System and so forth.  <img src=\"https://i.imgur.com/WlIyo8Z.png\"alt=\"Picture of anime\">",
+        "technologies": ["Typeorm", "Postgres", "Vue.js", "Typescript", "Node", "Argon2", "Nodemailer"],
+        "brief":"An application that allows users to create an account and send messages to people in Telegram.",
+        "video": "https://www.youtube.com/embed/9gXtkG8jOHY",
+        "lang":"en" 
+    },
+    {
+        "id": 3,
+        "title": "Mecho Robot",
+        "content": "It was quite hard wasn\"t <img src=\"https://i.imgur.com/WlIyo8Z.png\"alt=\"Picture of anime\">",
+        "technologies": ["Python3", "Pygame", "Krita"],
+        "brief":"Mecho Robot is a game where you can move around with your character and shoot.",
+        "video": "https://www.youtube.com/embed/9gXtkG8jOHY",
+        "lang":"en" 
+    }
+]

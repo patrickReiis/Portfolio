@@ -1,1 +1,92 @@
 @import "./base.css";
+
+
+.about-me-content {
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+    text-align: center;
+}
+
+.title{
+    text-align: center;
+    margin: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.video {
+    display: inline;
+}
+
+.projects-title {
+    text-align: center;
+}
+
+.projects-content{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.project-brief {
+    white-space: pre-wrap;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    margin: 0.5rem;
+}
+
+.read-more {
+    text-align: center;
+    display: block;
+}
+
+.contact-content {
+    text-align: center;
+}
+
+.footer-contact {
+    background: white;
+}
+
+header {
+    background: white;
+}
+
+main {
+    background: white;
+}
+
+.general-container {
+    box-shadow: 0px 0px 5px rgb(180, 180, 180);
+    margin: 1rem;
+    padding: 1rem;
+    margin-top: 0;
+}
+
+div.rule {
+    height: 3px;
+    background: rgb(220, 220, 230);
+    width: 85%;
+    margin: 1rem auto;
+    border-radius: 10px;
+}
+
+hr {
+    display: none;
+}
+
+.project-technologies {
+    list-style: none;
+    display: flex;
+}
+
+.item-tech {
+    margin: 0.5rem;
+}
+
+@media screen and (min-width:0px) and (max-width:700px){
+    .lang-ul {
+        margin-right: 0 !important;
+    }
+}
