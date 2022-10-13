@@ -5,5 +5,6 @@ export type Project = {
         technologies: string[];
         brief: string;
         video: string;
+        github: string;
         lang: 'pt'|'en';
 }
