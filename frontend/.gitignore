@@ -2,7 +2,7 @@
 .env
 
 # all build files here
-public/ 
+dist/
 
 # Logs
 logs
