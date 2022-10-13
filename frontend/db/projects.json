@@ -6,6 +6,7 @@
         "technologies": ["Typeorm", "Postgre", "Vue.js", "Typescript", "Node", "Argon2", "Nodemailer"],                              
         "brief":"REST API com sistema de cadastro e autenticação que possibilita usuarios a enviarem arquivos através de um Bot do Telegram",                   
         "video": "https://www.youtube.com/embed/SG5KAqUulP0",                        
+        "github": "https://github.com/patrickReiis/Files-to-Sent",
         "lang":"pt"
     }, 
     { 
@@ -15,6 +16,7 @@
         "technologies": ["Typeorm", "Postgre", "Vue.js", "Typescript", "Node", "Argon2", "Nodemailer"],
         "brief":"REST API with user registration and authentication that allows users to send files in Telegram through a Telegram Bot.",
         "video": "https://www.youtube.com/embed/SG5KAqUulP0",
+        "github": "https://github.com/patrickReiis/Files-to-Sent",
         "lang":"en" 
     },
     {
@@ -24,6 +26,7 @@
         "technologies": ["Node", "Postgre", "HTML", "CSS"],
         "brief":"To-do website where you can DELETE, UPDATE and POST to-do objects through a REST API.",
         "video": "https://www.youtube.com/embed/qfRR-xyu_y4",
+        "github": "https://github.com/patrickReiis/to-do",
         "lang":"en" 
     },
     {
@@ -33,6 +36,7 @@
         "technologies": ["Node", "Postgre", "HTML", "CSS"],
         "brief":"Planejador de Tarefas com a possibilidade de deletar, atualizar e postar novas tarefas atraves de uma REST API.",
         "video": "https://www.youtube.com/embed/qfRR-xyu_y4",
+        "github": "https://github.com/patrickReiis/to-do",
         "lang":"pt" 
     },
     {
@@ -42,6 +46,7 @@
         "technologies": ["Javascript", "HTML", "CSS"],
         "brief":"Frontend de uma empresa fake que oferece serviços de jardinagem.",
         "video": "https://www.youtube.com/embed/Oocrh_dB-2w",
+        "github": "https://github.com/patrickReiis/zipzop-garden",
         "lang":"pt" 
     },
     {
@@ -51,6 +56,7 @@
         "technologies": ["Javascript", "HTML", "CSS"],
         "brief":"Frontend of a fake company that offers gardening services.",
         "video": "https://www.youtube.com/embed/Oocrh_dB-2w",
+        "github": "https://github.com/patrickReiis/zipzop-garden",
         "lang":"en" 
     },
     {
@@ -61,6 +67,7 @@
         "technologies": ["Python", "Pygame"],
         "brief":"Jogo da velha com inteligencia artificial e grafícos 2D.",
         "video": "https://www.youtube.com/embed/YSfvjcSABtU",
+        "github": "https://github.com/patrickReiis/Tictactoe-with-AI",
         "lang":"pt" 
     },
     {
@@ -70,6 +77,7 @@
         "technologies": ["Python", "Pygame"],
         "brief":"Tic-tac-toe with AI and 2D graphics.",
         "video": "https://www.youtube.com/embed/YSfvjcSABtU",
+        "github": "https://github.com/patrickReiis/Tictactoe-with-AI",
         "lang":"en" 
     }
 ]
