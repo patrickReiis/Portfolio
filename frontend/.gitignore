@@ -1,6 +1,8 @@
 .env*
 .env
 
+public/ # all build files here
+
 # Logs
 logs
 *.log
