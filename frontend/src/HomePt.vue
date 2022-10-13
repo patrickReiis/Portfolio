@@ -30,7 +30,7 @@ postsResolve();
     </header>
 
     <main class="general-container">
-        <h2 class="title">Projects</h2>
+        <h2 class="title">Projetos</h2>
 
 
         <div class="projects-container" v-for="project in projectsList" :key="project.id">
@@ -48,22 +48,32 @@ postsResolve();
                     frameborder="0" allowfullscreen>
                 </iframe>
             </div>
-            <ul class="project-technologies">
-                <li v-for="tech in project.technologies" :key="tech" class="item-tech">
-                    {{tech}}
-                </li>
-            </ul>
-            <a class="read-more" v-bind:href="'#/project-' + project.id">Read Entire Project</a>
+
+            <div class="tech-container">
+                <p>
+                    Tecnologias Usadas:
+                </p>
+                <ul class="project-technologies">
+                    <li v-for="tech in project.technologies" :key="tech" class="item-tech">
+                        {{tech}}
+                    </li>
+                </ul>
+            </div>
+            <div class="read-more-container">
+                <a class="read-more" v-bind:href="'#/project-' + project.id">
+                    Read Entire Project
+                </a>
+            </div>
         </div>
     </main>
 
     <footer class="footer-contact general-container">
-        <h2 class="title">Contact</h2>
+        <h2 class="title">Contato</h2>
         <div class="contact-content">
             <p>
-                Contact me at patrickpereirareal1@gmail.com
+                Contate-me no email: patrickpereirareal1@gmail.com
                 <br>
-                I am also open to freelance work.
+                Estou aberto a trabalhos freelancer.
             </p>
         </div>
     </footer>

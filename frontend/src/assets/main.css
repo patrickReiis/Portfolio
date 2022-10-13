@@ -20,6 +20,7 @@
 
 .projects-title {
     text-align: center;
+    font-weight: bold;
 }
 
 .projects-content{
@@ -31,14 +32,22 @@
 .project-brief {
     white-space: pre-wrap;
     display: flex;
-    flex-flow: column wrap;
     justify-content: center;
+    align-items: center;
     margin: 0.5rem;
+    width: 50%;
 }
 
 .read-more {
     text-align: center;
     display: block;
+    color: #3590F3;
+    font-weight: bold;
+}
+
+.read-more-container {
+    display: flex;
+    justify-content: center;
 }
 
 .contact-content {
@@ -79,14 +88,31 @@ hr {
 .project-technologies {
     list-style: none;
     display: flex;
+    flex-flow: row wrap;
+    justify-content: center;;
+    padding: 0;
+    margin: 0;
+}
+
+.tech-container {
+    text-align: center;
+    margin: 0.5rem;
+}
+
+.tech-container p {
+    font-weight: bold;
 }
 
 .item-tech {
-    margin: 0.5rem;
+    margin: 0.25rem;
 }
 
 @media screen and (min-width:0px) and (max-width:700px){
     .lang-ul {
         margin-right: 0 !important;
+    }
+
+    .project-brief {
+        width: 100%;
     }
 }

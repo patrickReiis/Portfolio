@@ -25,11 +25,12 @@ getProject();
         <h2 class="title-project">{{project?.title}}</h2>    
         <div class="content-container">
             <div class="content" v-html="project?.content"></div>
-            <h3>Final Video</h3>
+            <h3 v-if="project?.lang === 'en'">Final Video</h3>
+            <h3 v-else>Vídeo Final</h3>
 
             <iframe id="player" type="text/html" width="640" height="390"
-                src="https://www.youtube.com/embed/xcJtL7QggTI?enablejsapi=1&rel=0"
-                frameborder="0" allowfullscreen></iframe>
+                :src="project?.video + '?enablejsapi=1&rel=0'"
+                frameborder="0" allowfullscreen class="video-yt"></iframe>
 
         </div>
     </main>
@@ -70,4 +71,20 @@ main {
     align-items: center;
 }
 
+@media screen and (min-width:0px) and (max-width:700px){
+    .content :deep(img){
+        width: 260px;
+    }
+
+    .video-yt{
+        width: 80%;
+        height: 80%;
+        min-width: 300px;
+        min-height: 250px;
+    }
+
+    .content {
+        width: 90%;
+    }
+}
 </style>

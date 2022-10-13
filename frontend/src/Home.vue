@@ -50,14 +50,20 @@ postsResolve();
             </div>
 
             <div class="tech-container">
-                Technologies Used:
+                <p>
+                    Technologies Used:
+                </p>
                 <ul class="project-technologies">
                     <li v-for="tech in project.technologies" :key="tech" class="item-tech">
-                        {{tech}}
-                    </li>
-                </ul>
+                            {{tech}}
+                        </li>
+                    </ul>
+                </div>
+            <div class="read-more-container">
+                <a class="read-more" v-bind:href="'#/project-' + project.id">
+                    Read Entire Project
+                </a>
             </div>
-            <a class="read-more" v-bind:href="'#/project-' + project.id">Read Entire Project</a>
         </div>
     </main>
 
