@@ -72,7 +72,7 @@ postsResolve();
             </div>
             <div class="read-more-container">
                 <a class="read-more" v-bind:href="'#/project-' + project.id">
-                    Read Entire Project
+                   Ler o Projeto Inteiro 
                 </a>
             </div>
         </div>
