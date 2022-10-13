@@ -16,6 +16,12 @@
 
 .video {
     display: inline;
+    width: 400px;
+    height: 190px;
+}
+
+.github-icon {
+    vertical-align: middle;
 }
 
 .projects-title {
@@ -27,6 +33,17 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+}
+
+.video-github {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.github-source {
+    color: #3590F3;
+    margin: 0.25rem;
 }
 
 .project-brief {
@@ -107,12 +124,29 @@ hr {
     margin: 0.25rem;
 }
 
+.linkedin-icon {
+    vertical-align: middle;
+}
+
+.linkedin-container a {
+    color: #3590F3;
+}
+
 @media screen and (min-width:0px) and (max-width:700px){
     .lang-ul {
-        margin-right: 0 !important;
+        margin-right: 0;
     }
 
     .project-brief {
         width: 100%;
+    }
+
+    .video {
+        display: inline;
+        width: 100%;
+    }
+
+    .video-github: {
+        width: 400px;
     }
 }
