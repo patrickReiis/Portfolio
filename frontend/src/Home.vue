@@ -85,7 +85,7 @@ postsResolve();
                 I am also open to freelance work.
             </p>
             <div class="linkedin-container">
-                <a href="linkedin.com/in/patrick-dos-reis-b98873253">
+                <a href="https://www.linkedin.com/in/patrick-dos-reis-b98873253/" target="_blank">
                     <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 112.196 112.196" style="enable-background:new 0 0 112.196 112.196;" xml:space="preserve" width="25" class="linkedin-icon">
                         <g>
                             <circle style="fill:#007AB9;" cx="56.098" cy="56.097" r="56.098"/>
