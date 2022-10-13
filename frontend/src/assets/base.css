@@ -46,7 +46,8 @@
     --color-border-hover: var(--vt-c-divider-dark-1);
 
     --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
+    /*--color-text: var(--vt-c-text-dark-2); this variable color is half transparent, maybe in the future I make websites based on theme, but not for now */
+    
   }
 }
 
