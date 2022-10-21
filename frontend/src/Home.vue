@@ -21,7 +21,7 @@ postsResolve();
                 I am a web developer from Brazil looking for my first programming job.
             </p>
             <p>
-                I have a strong knowledge on the backend but I can also work on the frontend.
+                I have a strong knowledge on the backend and I can also work on the frontend.
             </p>
             <p>
                 I like coding because it allows me to transform ideas into reality.

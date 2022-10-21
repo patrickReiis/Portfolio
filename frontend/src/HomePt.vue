@@ -21,7 +21,7 @@ postsResolve();
                 Eu sou um programador procurando pelo meu primeiro emprego na area de programação.
             </p>
             <p>
-                Tenho um ótimo conhecimento backend mas também sou capaz de trabalhar no frontend.
+                Tenho um ótimo conhecimento no backend e também sou capaz de trabalhar no frontend.
             </p>
             <p>
                 Eu gosto de programar porque isso me possibilita transformar ideias em realidade.
