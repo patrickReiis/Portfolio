@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import type { Ref } from 'vue';
 import type { Project } from './customTypes'; 
 import database from '../db/projects.json'; 
+import ProjectFooterPt from './ProjectFooterPt.vue';
 
 const projectsList:Ref<Project[]> = ref([]);
 
@@ -15,7 +16,7 @@ postsResolve();
 
 <template>
     <header class="general-container">
-        <h2 class="title">Sobre Mim</h2>
+        <h2 class="title">SOBRE MIM</h2>
         <div class="about-me-content">
             <p>
                 Eu sou um programador procurando pelo meu primeiro emprego na area de programação.
@@ -40,6 +41,7 @@ postsResolve();
             <div class="projects-content">
                 <div class="project-brief">
                     <p>{{ project.brief }}</p>
+                    <ProjectFooterPt :projectId="project.id" :technologies="project.technologies"/> 
                 </div>
 
                 <div class="video-github">
@@ -55,25 +57,7 @@ postsResolve();
                         </svg>
                         Source Code
                     </a>
-
                 </div>
-
-            </div>
-
-            <div class="tech-container">
-                <p>
-                    Tecnologias Usadas:
-                </p>
-                <ul class="project-technologies">
-                    <li v-for="tech in project.technologies" :key="tech" class="item-tech">
-                        {{tech}}
-                    </li>
-                </ul>
-            </div>
-            <div class="read-more-container">
-                <a class="read-more" v-bind:href="'#/project-' + project.id">
-                   Ler o Projeto Inteiro 
-                </a>
             </div>
         </div>
     </main>
