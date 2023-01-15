@@ -35,6 +35,10 @@
     justify-content: center;
 }
 
+.projects-container {
+  background: var(--project-bg-color);
+}
+
 .video-github {
     display: flex;
     flex-flow: column nowrap;
@@ -49,6 +53,7 @@
 .project-brief {
     white-space: pre-wrap;
     display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     margin: 0.5rem;
@@ -71,23 +76,8 @@
     text-align: center;
 }
 
-.footer-contact {
-    background: white;
-}
-
-header {
-    background: white;
-}
-
-main {
-    background: white;
-}
-
 .general-container {
-    box-shadow: 0px 0px 5px rgb(180, 180, 180);
-    margin: 1rem;
-    padding: 1rem;
-    margin-top: 0;
+  color: var(--main-font-color);
 }
 
 div.rule {
