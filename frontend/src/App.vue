@@ -10,6 +10,8 @@ const routes:any = {'/home': Home, '/home-pt': HomePt}
 
 const  currentPath = ref(window.location.hash)
 
+const currentLangSelected = ref('en');
+
 window.addEventListener('hashchange', () => {
    currentPath.value = window.location.hash; 
 })
@@ -42,8 +44,8 @@ function goToHome() {
     </div>
     <div class="language-container">
             <ul class="lang-ul">
-                <li><a href="#/home">English</a></li>
-                <li><a href="#/home-pt">Português</a></li>
+                <li><a  :class="currentLangSelected  === 'en' ? 'selected' : ''" @click="currentLangSelected = 'en'" href="#/home">English</a></li>
+                <li><a  :class="currentLangSelected  === 'pt' ? 'selected' : ''" @click="currentLangSelected = 'pt'" href="#/home-pt">Português</a></li>
             </ul>
         </div>
     </nav>
@@ -63,6 +65,12 @@ position: absolute;
 right: 0;
 top: 0;
 padding: 0.5rem;
+}
+
+.selected {
+  background: #A6A6A6;
+padding: 0.4rem;
+border-radius: 1rem;
 }
 
 .world-icon {
@@ -100,8 +108,13 @@ background: var(--background-color);
     padding: 0;
 }
 
+.lang-ul li {
+margin: 0.1rem;
+}
+
 .lang-ul li a {
     color: var(--main-font-color);
+    text-decoration: none;
 }
 
 @media screen and (min-width: 0px) and (max-width: 700px) {
@@ -114,7 +127,7 @@ background: var(--background-color);
   }
 
   .my-name-container {
-margin-top: 2.5rem;
+    margin-top: 3rem;
 }
 
 }
