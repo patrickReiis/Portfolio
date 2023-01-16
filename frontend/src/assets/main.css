@@ -1,5 +1,39 @@
 @import "./base.css";
 
+.slide-fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.slide-fade-out {
+  animation: fadeOut 0.3s ease-in;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+.slide-info {
+  position: absolute;
+  top: 100%;
+  transform: translateY(-100%);
+}
 
 .about-me-content {
     display: flex;
@@ -33,6 +67,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    padding-bottom: 45px;
 }
 
 .projects-container {
@@ -43,6 +78,7 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    justify-content: center;
 }
 
 .github-source {
@@ -122,6 +158,16 @@ hr {
     color: #3590F3;
 }
 
+.arrow-button {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.arrow-button path {
+  fill: white;
+}
+
 @media screen and (min-width:0px) and (max-width:700px){
     .lang-ul {
         margin-right: 0;
@@ -138,5 +184,17 @@ hr {
 
     .video-github {
         width: 400px;
+    }
+
+
+    .projects-content{
+      height: 460px;
+    }
+}
+
+
+@media screen and (min-width:700px) and (max-width:1035px){
+    .projects-content{
+      height: 480px;
     }
 }
