@@ -4,14 +4,36 @@ import type { Ref } from 'vue';
 import type { Project } from './customTypes';
 import database from '../db/projects.json';
 import ProjectFooter from './ProjectFooter.vue';
+import RightButton from './RightButton.vue';
+import LeftButton from './LeftButton.vue';
 
 const projectsList: Ref<Project[]> = ref([]);
+const currentId = ref(0);
+const fadeInOrOut = ref('slide-fade-in');
 
 async function postsResolve() {
-    projectsList.value = (database.filter(e => e.lang === 'en') as Project[]);
+    const db = database as {'en': Project[], 'pt': Project[]};
+    projectsList.value = (db['en'] as Project[]);
 }
 
 postsResolve();
+
+function handleUpdate(direction:'left'|'right') {
+  fadeInOrOut.value = 'slide-fade-out'
+
+  if (direction === 'left') {
+    if (currentId.value === 0) { currentId.value = projectsList.value.length -1}
+    else currentId.value --;
+  }
+
+  if (direction === 'right') {
+    if (currentId.value === projectsList.value.length - 1) { currentId.value = 0}
+    else currentId.value ++;
+  }
+  setTimeout(() => {
+    fadeInOrOut.value = 'slide-fade-in';
+  }, 300)
+}
 </script>
 
 <template>
@@ -33,23 +55,23 @@ postsResolve();
     <main class="general-container">
         <h2 class="title">Projects</h2>
 
-
-        <div class="projects-container" v-for="project in projectsList" :key="project.id">
+        <div class="projects-container">
             <div class="rule"></div>
             <hr>
-            <h3 class="projects-title">{{ project.title }}</h3>
-            <div class="projects-content">
-                <div class="project-brief">
-                    <p>{{ project.brief }}</p>
-                    <ProjectFooter :projectId="project.id" :technologies="project.technologies"/> 
+            <h3 class="projects-title" :class="fadeInOrOut">{{ projectsList[currentId].title }}</h3>
+            <div class="projects-content" >
+            <LeftButton @click="handleUpdate('left')"/>
+                <div class="project-brief" :class="fadeInOrOut">
+                    <p>{{ projectsList[currentId].brief }}</p>
+                    <ProjectFooter :projectId="currentId" :technologies="projectsList[currentId].technologies"/> 
                 </div>
 
-                <div class="video-github">
+                <div class="video-github" :class="fadeInOrOut">
                     <iframe id="player" type="text/html" width="400" height="190" class="video"
-                        :src="project.video + '?enablejsapi=1&rel=0'" frameborder="0" allowfullscreen
+                        :src="projectsList[currentId].video + '?enablejsapi=1&rel=0'" frameborder="0" allowfullscreen
                         style="border: solid 4px #37474F">
                     </iframe>
-                    <a :href="project.github" target="_blank" class="github-source">
+                    <a :href="projectsList[currentId].github" target="_blank" class="github-source">
                         <svg class="github-icon" width="25px" height="25px" viewBox="0 0 32 32"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -58,6 +80,10 @@ postsResolve();
                         Source Code
                     </a>
                 </div>
+              <div class="slide-info">
+                {{currentId + 1}}/{{projectsList.length}}
+              </div>
+                <RightButton @click="handleUpdate('right')"/>
             </div>
         </div>
     </main>
