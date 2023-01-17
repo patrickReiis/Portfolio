@@ -54,6 +54,7 @@
 
 .github-icon {
     vertical-align: middle;
+    fill: var(--main-font-color)
 }
 
 .projects-title {
