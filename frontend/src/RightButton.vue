@@ -60,7 +60,7 @@ z-index: 2;
 
 .right-button {
   top: 100%;
-transform: translateY(-100%);
+  transform: translateY(-125%);
 }
 }
 </style>

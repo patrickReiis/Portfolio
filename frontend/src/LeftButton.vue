@@ -58,7 +58,7 @@ z-index: 2;
 @media screen and (min-width:0px) and (max-width:1035px){
 .left-button {
   top: 100%;
-transform: scaleX(-1) translateY(-100%);
+transform: scaleX(-1) translateY(-125%);
 }
 }
 </style>
