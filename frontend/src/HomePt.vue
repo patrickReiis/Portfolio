@@ -6,6 +6,7 @@ import database from '../db/projects.json';
 import ProjectFooterPt from './ProjectFooterPt.vue';
 import RightButton from './RightButton.vue';
 import LeftButton from './LeftButton.vue';
+import Division from './Division.vue';
 
 const projectsList:Ref<Project[]> = ref([]);
 const currentId = ref(0);
@@ -56,8 +57,9 @@ function handleUpdate(direction:'left'|'right') {
         <h2 class="title">Projetos</h2>
 
         <div class="projects-container">
-            <div class="rule"></div>
-            <hr>
+
+            <Division/>
+
             <h3 class="projects-title" :class="fadeInOrOut">{{ projectsList[currentId].title }}</h3>
             <div class="projects-content" >
             <LeftButton @click="handleUpdate('left')"/>
