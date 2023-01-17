@@ -203,6 +203,10 @@ header {
         width: 400px;
     }
 
+    .guy-sit-svg {
+      margin-top: 2rem;
+      transform: scale(1);
+    }
 
     .projects-content{
       height: 460px;
