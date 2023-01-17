@@ -38,6 +38,7 @@
     align-items: center;
     flex-flow: column wrap;
     text-align: center;
+    margin: auto 0.8rem;
 }
 
 .title{
@@ -54,7 +55,8 @@
 
 .github-icon {
     vertical-align: middle;
-    fill: var(--main-font-color)
+    fill: var(--main-font-color);
+    margin-right: 0.2rem;
 }
 
 .projects-title {
@@ -76,6 +78,8 @@
     flex-flow: row wrap;
     justify-content: center;
     padding-bottom: 45px;
+    max-width: 1400px;
+    margin: auto;
 }
 
 .projects-container {
@@ -152,6 +156,7 @@ header {
 
 .linkedin-icon {
     vertical-align: middle;
+    margin-right: 0.2rem;
 }
 
 .linkedin-container a {
@@ -178,6 +183,8 @@ header {
   display: flex;
   flex-flow: row-reverse wrap;
   justify-content: space-around;
+  max-width: 1400px;
+  margin: auto;
 }
 
 .guy-sit-svg {
