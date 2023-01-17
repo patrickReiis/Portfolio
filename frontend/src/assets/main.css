@@ -116,18 +116,6 @@
   color: var(--main-font-color);
 }
 
-div.rule {
-    height: 3px;
-    background: rgb(220, 220, 230);
-    width: 85%;
-    margin: 1rem auto;
-    border-radius: 10px;
-}
-
-hr {
-    display: none;
-}
-
 .project-technologies {
     list-style: none;
     display: flex;
