@@ -7,7 +7,7 @@ import GuySit from './GuySit.vue';
 
 <div class="contact-container">
 
-        <h2 class="title contact-title">Contato</h2>
+        <h2 class="title contact-title">CONTATO</h2>
         <div class="contact-content">
             <p>
                 Contate-me no email: patrickpereirareal1@gmail.com
