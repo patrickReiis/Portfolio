@@ -12,7 +12,7 @@ defineProps({
                     Technologies Used:
                 </p>
                 <ul class="project-technologies">
-                    <li v-for="tech in technologies" :key="tech" class="item-tech">
+                    <li v-for="tech in technologies" :key="tech as string" class="item-tech">
                             {{tech}}
                         </li>
                     </ul>
