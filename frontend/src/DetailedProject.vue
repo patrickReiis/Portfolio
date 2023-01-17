@@ -52,7 +52,8 @@ getProject();
 <style scoped>
 
 main {
-    background: white;
+    background: var(--project-bg-color);
+    color: var(--main-font-color);
     margin: 1rem;
     margin-top: 0;
 }
