@@ -18,7 +18,7 @@ window.addEventListener('hashchange', () => {
 
 const currentView = computed(() => {
 
-    if( /^\/project-[0-9]+$/.test(currentPath.value.slice(1)) ){ // project-<any-number>, for example: project-2
+    if( /^\/home(-pt)?\/[0-9]+$/.test(currentPath.value.slice(1)) ){ // project-<any-number>, for example: project-2
        return DetailedProjectVue; 
     }
 
@@ -26,8 +26,12 @@ const currentView = computed(() => {
 });
 
 function goToHome() {
-    window.location.hash = ''
+console.log(window.location.hash.slice(1, '/home-pt'.length + 1) === '/home-pt');
+    window.location.hash = window.location.hash.slice(1, '/home-pt'.length + 1) === '/home-pt' ? '/home-pt' : '/home' 
+     
 }
+
+goToHome();
 
 </script>
 
