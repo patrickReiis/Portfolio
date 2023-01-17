@@ -8,11 +8,23 @@ import database from '../db/projects.json';
 const project:Ref<Project|null> = ref(null);
 
 async function getProject(){
-    let id:string|number = window.location.hash.slice(1 + 1 + 'project-'.length);
+    let currentLang = window.location.hash.slice(1);
+
+    const isPtHome = currentLang.slice(0, '/home-pt/'.length)
+
+    currentLang = isPtHome === '/home-pt/' ? 'pt' : 'en';
+    
+    if (currentLang !== 'en' && currentLang !== 'pt') {
+      window.location.hash = '/home' 
+      return
+    } 
+
+    let id:string|number = currentLang === 'pt' ? window.location.hash.slice('/home-pt/'.length + 1) : window.location.hash.slice('/home/'.length + 1)
 
     id = Number(id);
 
-    const projectDb = (database.filter(element => element.id == id)[0] as Project);
+
+    const projectDb = (database as {'en': Project[], 'pt': Project[]})[currentLang as 'pt'|'en'][id-1];
     project.value = projectDb; 
 
 }
@@ -40,7 +52,8 @@ getProject();
 <style scoped>
 
 main {
-    background: white;
+    background: var(--project-bg-color);
+    color: var(--main-font-color);
     margin: 1rem;
     margin-top: 0;
 }

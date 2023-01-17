@@ -1,5 +1,37 @@
 @import "./base.css";
 
+.slide-fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.slide-fade-out {
+  animation: fadeOut 0.3s ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.slide-info {
+  position: absolute;
+  top: 100%;
+  transform: translateY(-100%);
+}
 
 .about-me-content {
     display: flex;
@@ -22,33 +54,50 @@
 
 .github-icon {
     vertical-align: middle;
+    fill: var(--main-font-color)
 }
 
 .projects-title {
     text-align: center;
     font-weight: bold;
+    font-style: italic;
+}
+
+.project-title {
+  font-family: mainFont;
+  border-bottom: 3px solid var(--main-font-color);
+  width: fit-content;
+  margin: 0.5rem auto;
+  font-size: 3rem;
 }
 
 .projects-content{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    padding-bottom: 45px;
+}
+
+.projects-container {
+  background: var(--project-bg-color);
 }
 
 .video-github {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    justify-content: center;
 }
 
 .github-source {
-    color: #3590F3;
+    color: var(--main-font-color);
     margin: 0.25rem;
 }
 
 .project-brief {
     white-space: pre-wrap;
     display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     margin: 0.5rem;
@@ -58,7 +107,7 @@
 .read-more {
     text-align: center;
     display: block;
-    color: #3590F3;
+    color: var(--main-font-color);
     font-weight: bold;
 }
 
@@ -71,35 +120,8 @@
     text-align: center;
 }
 
-.footer-contact {
-    background: white;
-}
-
-header {
-    background: white;
-}
-
-main {
-    background: white;
-}
-
 .general-container {
-    box-shadow: 0px 0px 5px rgb(180, 180, 180);
-    margin: 1rem;
-    padding: 1rem;
-    margin-top: 0;
-}
-
-div.rule {
-    height: 3px;
-    background: rgb(220, 220, 230);
-    width: 85%;
-    margin: 1rem auto;
-    border-radius: 10px;
-}
-
-hr {
-    display: none;
+  color: var(--main-font-color);
 }
 
 .project-technologies {
@@ -120,6 +142,10 @@ hr {
     font-weight: bold;
 }
 
+header {
+  margin: 3rem auto;
+}
+
 .item-tech {
     margin: 0.25rem;
 }
@@ -129,7 +155,34 @@ hr {
 }
 
 .linkedin-container a {
-    color: #3590F3;
+    color: var(--main-font-color);
+}
+
+.arrow-button {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.arrow-button path {
+  fill: white;
+}
+
+.contact-title {
+  font-weight: bold;
+  border-top: 3px solid var(--main-font-color);
+  padding-top: 1rem;
+}
+
+.footer-contact {
+  display: flex;
+  flex-flow: row-reverse wrap;
+  justify-content: space-around;
+}
+
+.guy-sit-svg {
+  margin-top: 2rem;
+  transform: scale(1.2);
 }
 
 @media screen and (min-width:0px) and (max-width:700px){
@@ -148,5 +201,16 @@ hr {
 
     .video-github {
         width: 400px;
+    }
+
+
+    .projects-content{
+      height: 460px;
+    }
+}
+
+@media screen and (min-width:700px) and (max-width:1035px){
+    .projects-content{
+      height: 480px;
     }
 }
