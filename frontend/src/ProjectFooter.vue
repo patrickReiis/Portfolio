@@ -4,6 +4,11 @@ defineProps({
   projectId: Number
 });
 
+function handleShowProject(id: number) {
+  const currentURL = window.location.hash
+  return currentURL + `/${id+1}`
+}
+
 </script>
 
 <template>
@@ -18,7 +23,7 @@ defineProps({
                     </ul>
                 </div>
             <div class="read-more-container">
-                <a class="read-more" v-bind:href="'#/project-' + projectId">
+                <a class="read-more" v-bind:href="handleShowProject(projectId as number)">
                     Read Entire Project
                 </a>
             </div>
