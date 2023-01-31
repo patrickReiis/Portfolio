@@ -173,6 +173,10 @@ header {
   fill: white;
 }
 
+a {
+  color: var(--main-font-color);
+}
+
 .contact-title {
   font-weight: bold;
   border-top: 3px solid var(--main-font-color);
