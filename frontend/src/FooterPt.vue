@@ -34,6 +34,8 @@ import GuySit from './GuySit.vue';
                     </svg>
                     Linkedin
                 </a>
+                <br>
+                    📄<a href="https://drive.google.com/file/d/1lyYrzEBTDv_C7Pw7y_ta_tdn59VLJIrq/view?usp=share_link" target="_blank">Currículo</a>
             </div>
         </div>
 </div>
