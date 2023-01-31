@@ -35,7 +35,7 @@
       "title":"Zipzop Garden",
       "content": "Esse projeto não foi difícil de criar, porém foi desgastante. O frontend é algo que é necessário desenvolver como o site vai ser no quesito design e depois implementar isso e também garantir que tudo funcione no computador e no celular e claro, tudo isso de uma forma com acessibilidade. \n\nA vantagem de um projeto frontend desgastante é que depois que o design já foi estabelecido, o resto fica fácil já que não é necessário pensar demais, tu só precisa garantir que a implementação fique idêntica a do design.\n\nEu não sou muito bom com design então eu pesquisei vários sites de jardinagem e depois criei o meu próprio. Isso me ajudou bastante na parte de inspiração.\n\nComo o Steven Wright disse “Copiar de uma pessoa é plágio; copiar de várias é pesquisa” (em tradução livre).\n\n",
       "technologies": ["Javascript", "HTML", "CSS"],
-      "brief":"Frontend de uma empresa fake que oferece serviços de jardinagem.",
+      "brief":"Frontend de uma empresa fictícia que oferece serviços de jardinagem.",
       "video": "https://www.youtube.com/embed/Oocrh_dB-2w",
       "github": "https://github.com/patrickReiis/zipzop-garden",
       "lang":"pt" 
@@ -77,7 +77,7 @@
       "title":"Zipzop Garden",
       "content": "This project wasn’t hard to build but it was very overwhelming. The thing about frontend is that you need to design how the website will look and then implement it and also make sure everything works in both mobile and desktop with accessibility.\n\nThe advantage of an overwhelming frontend project is that once you have the design, the rest is easy because you don’t need to think very much, you just need to make sure it’s the same as the design.\n\nI’m not very good at design so I searched a bunch of gardening websites and then created one of my own. It helped me a lot with inspiration.\n\nAs Steven Wright said “To steal ideas from one person is plagiarism; to steal from many is research.”\n\n",
       "technologies": ["Javascript", "HTML", "CSS"],
-      "brief":"Frontend of a fake company that offers gardening services.",
+      "brief":"Frontend for a fictitious gardening company that offers gardening services.",
       "video": "https://www.youtube.com/embed/Oocrh_dB-2w",
       "github": "https://github.com/patrickReiis/zipzop-garden",
       "lang":"en" 
