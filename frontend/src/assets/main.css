@@ -77,9 +77,12 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    padding-bottom: 45px;
     max-width: 1400px;
     margin: auto;
+}
+
+.project-container{
+    padding: 1rem 0;
 }
 
 .projects-container {
@@ -197,6 +200,11 @@ a {
 }
 
 @media screen and (min-width:0px) and (max-width:700px){
+
+    .project-container{
+        padding: 0;
+    }
+
     .lang-ul {
         margin-right: 0;
     }
