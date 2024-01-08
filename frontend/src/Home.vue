@@ -24,13 +24,9 @@ postsResolve();
     <h2 class="title">ABOUT ME</h2>
     <div class="about-me-content">
       <p>
-        I am a web developer from Brazil looking for my first programming job.
+        I am a software developer from Brazil looking for a programming job.
       </p>
-      <p>
-        I have a strong knowledge on the backend and I can also work on the
-        frontend.
-      </p>
-      <p>I like coding because it allows me to transform ideas into reality.</p>
+      <p>I have experience contributing to relevant open source projects.</p>
     </div>
   </header>
 
