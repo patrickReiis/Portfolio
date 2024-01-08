@@ -81,12 +81,6 @@ goToHome();
   padding: 0.5rem;
 }
 
-.selected {
-  background: #a6a6a6;
-  padding: 0.4rem;
-  border-radius: 1rem;
-}
-
 .world-icon {
   width: 25px;
   height: 25px;
@@ -123,12 +117,20 @@ goToHome();
 }
 
 .lang-ul li {
-  margin: 0.1rem;
+  margin: 0.25rem;
 }
 
 .lang-ul li a {
   color: var(--main-font-color);
   text-decoration: none;
+  background: transparent;
+  padding: 0.4rem;
+}
+
+.lang-ul li a.selected {
+  background: #a6a6a6;
+  padding: 0.4rem;
+  border-radius: 1rem;
 }
 
 @media screen and (min-width: 0px) and (max-width: 700px) {
