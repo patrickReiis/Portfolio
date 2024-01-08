@@ -9,7 +9,6 @@ import Footer from "./Footer.vue";
 
 const projectsList: Ref<Project[]> = ref([]);
 const currentId = ref(0);
-const fadeInOrOut = ref("slide-fade-in");
 
 async function postsResolve() {
   const db = database as { en: Project[]; pt: Project[] };
@@ -37,18 +36,19 @@ postsResolve();
       <div v-for="project in projectsList" :key="project.id">
         <Division />
         <div class="project-container">
-          <h3 class="projects-title" :class="fadeInOrOut">
+          <h3 class="projects-title">
             {{ project.title }}
           </h3>
           <div class="projects-content">
-            <div class="project-brief" :class="fadeInOrOut">
+            <div class="project-brief">
               <p>{{ project.brief }}</p>
               <ProjectFooter
                 :projectId="currentId"
                 :technologies="project.technologies"
+                :projectContent="project.content"
               />
             </div>
-            <div class="video-github" :class="fadeInOrOut">
+            <div class="video-github">
               <iframe
                 id="player"
                 type="text/html"
