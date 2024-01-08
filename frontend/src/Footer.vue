@@ -55,7 +55,7 @@ import GuySit from "./GuySit.vue";
           📄<a
             href="https://drive.google.com/file/d/10EEpL6ehDmePN424uQrAiUPDKW69z64h/view?usp=share_link"
             target="_blank"
-            >Resume</a
+            >Résumé</a
           >
           <br />
           <div>
