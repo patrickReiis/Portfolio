@@ -123,6 +123,23 @@
     justify-content: center;
 }
 
+.project-footer-content {
+  white-space: pre-wrap;
+  text-align: justify;
+}
+
+.projects-content img {
+    width: 400px;
+}
+
+.project-footer-content-container {
+  margin: 0.5rem;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 .contact-content {
     text-align: center;
 }
@@ -205,6 +222,14 @@ a {
         padding: 0;
     }
 
+    .project-footer-content :deep(img) {
+        width: 260px;
+    }
+
+    .project-footer-content {
+        margin: 0 0.25rem;
+    }
+
     .lang-ul {
         margin-right: 0;
     }
@@ -226,14 +251,7 @@ a {
       margin-top: 2rem;
       transform: scale(1);
     }
-
-    .projects-content{
-      height: 460px;
-    }
 }
 
 @media screen and (min-width:700px) and (max-width:1035px){
-    .projects-content{
-      height: 480px;
-    }
 }
