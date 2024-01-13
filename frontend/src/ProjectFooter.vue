@@ -13,6 +13,15 @@ function handleShowReadMore() {
   const currentURL = window.location.hash;
   return currentURL;
 }
+
+function handleToggleReadMore(id: number | undefined) {
+  toggleReadMore.value = !toggleReadMore.value;
+  if (toggleReadMore.value === true) {
+    sessionStorage.setItem(`postReadMore${id}`, "true");
+    return;
+  }
+  sessionStorage.setItem(`postReadMore${id}`, "false");
+}
 </script>
 
 <template>
@@ -34,7 +43,7 @@ function handleShowReadMore() {
   <div class="read-more-container">
     <a
       class="read-more"
-      @click="toggleReadMore = !toggleReadMore"
+      @click="handleToggleReadMore(projectId)"
       v-bind:href="handleShowReadMore()"
     >
       {{ toggleReadMore == false ? "Read More" : "Hide" }}
