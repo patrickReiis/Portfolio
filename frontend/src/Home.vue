@@ -8,7 +8,6 @@ import Division from "./Division.vue";
 import Footer from "./Footer.vue";
 
 const projectsList: Ref<Project[]> = ref([]);
-const currentId = ref(0);
 
 async function postsResolve() {
   const db = database as { en: Project[]; pt: Project[] };
@@ -43,7 +42,7 @@ postsResolve();
             <div class="project-brief">
               <p>{{ project.brief }}</p>
               <ProjectFooter
-                :projectId="currentId"
+                :projectId="(project.id as number)"
                 :technologies="project.technologies"
                 :projectContent="project.content"
               />
