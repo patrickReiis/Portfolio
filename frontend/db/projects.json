@@ -25,7 +25,7 @@
       "title":"Zipzop Garden",
       "content": "O site é totalmente responsivo. Com este projeto aprendi sobre UI design",
       "technologies": ["Node.js", "JavaScript", "HTML", "CSS", "nodemon"],
-      "brief":"Frontend de uma empresa de jardinagem.",
+      "brief":"Frontend para uma empresa de jardinagem.",
       "video": "https://www.youtube.com/embed/Oocrh_dB-2w",
       "github": "https://github.com/patrickReiis/zipzop-garden",
       "lang":"pt" 
