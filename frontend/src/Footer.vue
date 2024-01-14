@@ -1,6 +1,4 @@
-<script setup lang="ts">
-import GuySit from "./GuySit.vue";
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <footer class="footer-contact general-container">
@@ -75,6 +73,5 @@ import GuySit from "./GuySit.vue";
         </div>
       </div>
     </div>
-    <GuySit />
   </footer>
 </template>
