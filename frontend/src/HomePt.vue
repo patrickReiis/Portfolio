@@ -3,7 +3,7 @@ import { ref } from "vue";
 import type { Ref } from "vue";
 import type { Project } from "./customTypes";
 import database from "../db/projects.json";
-import ProjectFooter from "./ProjectFooter.vue";
+import ProjectFooterPt from "./ProjectFooterPt.vue";
 import Division from "./Division.vue";
 import FooterPt from "./FooterPt.vue";
 
@@ -78,7 +78,7 @@ postsResolve();
           <div class="projects-content">
             <div class="project-brief">
               <p>{{ project.brief }}</p>
-              <ProjectFooter
+              <ProjectFooterPt
                 :projectId="(project.id as number)"
                 :technologies="project.technologies"
                 :projectContent="project.content"
