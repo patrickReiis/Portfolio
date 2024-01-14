@@ -70,7 +70,21 @@
   border-bottom: 3px solid var(--main-font-color);
   width: fit-content;
   margin: 0.5rem auto;
-  font-size: 3rem;
+  font-size: 2.7rem;
+}
+
+.open-source-container {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.open-source-project {
+    margin: 0.5rem auto;
+    max-width: 750px
+}
+
+.open-source-project-title {
+    font-weight: bold;
 }
 
 .projects-content{
