@@ -35,6 +35,11 @@ function goToHome() {
       : "/home";
 }
 
+async function resetReadMore() {
+  sessionStorage.clear();
+}
+
+resetReadMore();
 goToHome();
 </script>
 
