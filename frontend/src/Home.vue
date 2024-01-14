@@ -54,7 +54,7 @@ postsResolve();
             Improved user experience with a toggleable styled QR Code using
             JavaScript and CSS.
           </li>
-          <li>+30 lines added and -0 line removed.</li>
+          <li>+30 lines added and 0 line removed.</li>
           <li>
             <a
               href="https://github.com/moneromooo-monero/monero-wallet-generator/pull/31"
