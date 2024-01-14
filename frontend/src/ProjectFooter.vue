@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 
-defineProps({
+const props = defineProps({
   technologies: Array,
   projectId: Number,
   projectContent: String,
@@ -9,7 +9,9 @@ defineProps({
 
 const toggleReadMore = ref(false);
 
-function handleShowReadMore() {
+const postReadMorePrefix = "postReadMore";
+
+function getCurrentLocation() {
   const currentURL = window.location.hash;
   return currentURL;
 }
@@ -20,8 +22,20 @@ function handleToggleReadMore(id: number | undefined) {
     sessionStorage.setItem(`postReadMore${id}`, "true");
     return;
   }
-  sessionStorage.setItem(`postReadMore${id}`, "false");
+  sessionStorage.setItem(`${postReadMorePrefix}${id}`, "false");
 }
+
+async function getReadMoreState() {
+  const shouldReadMore = sessionStorage.getItem(
+    `${postReadMorePrefix}${props.projectId}`
+  );
+
+  if (shouldReadMore === "true") {
+    toggleReadMore.value = true;
+  }
+}
+
+getReadMoreState();
 </script>
 
 <template>
@@ -44,7 +58,7 @@ function handleToggleReadMore(id: number | undefined) {
     <a
       class="read-more"
       @click="handleToggleReadMore(projectId)"
-      v-bind:href="handleShowReadMore()"
+      v-bind:href="getCurrentLocation()"
     >
       {{ toggleReadMore == false ? "Read More" : "Hide" }}
     </a>
