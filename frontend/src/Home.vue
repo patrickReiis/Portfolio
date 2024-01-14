@@ -24,11 +24,47 @@ postsResolve();
       <p>
         I am a software developer from Brazil looking for a programming job.
       </p>
-      <p>I have experience contributing to relevant open source projects.</p>
     </div>
   </header>
 
   <main class="general-container">
+    <h2 class="title project-title">OPEN SOURCE</h2>
+    <div class="open-source-container">
+      <div class="open-source-project">
+        <p class="open-source-project-title">
+          InterPlanetary File System (IPFS)
+        </p>
+        <ul>
+          <li>
+            Fixed two issues and wrote tests from scratch using the Go
+            Programming Language.
+          </li>
+          <li>+117 lines added and -1 line removed.</li>
+          <li>
+            <a href="https://github.com/ipfs/kubo/pull/10143" target="_blank"
+              >See Pull Request</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="open-source-project">
+        <p class="open-source-project-title">Monero Wallet Generator</p>
+        <ul>
+          <li>
+            Improved user experience with a toggleable styled QR Code using
+            JavaScript and CSS.
+          </li>
+          <li>+30 lines added and -0 line removed.</li>
+          <li>
+            <a
+              href="https://github.com/moneromooo-monero/monero-wallet-generator/pull/31"
+              target="_blank"
+              >See Pull Request</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
     <h2 class="title project-title">PROJECTS</h2>
 
     <div class="projects-container">
