@@ -1,0 +1,12 @@
+{
+  "names": {
+    "_": "47259076c85f9240e852420d7213c95e95102f1de929fb60f33a2c32570c98c4",
+    "patrick": "47259076c85f9240e852420d7213c95e95102f1de929fb60f33a2c32570c98c4",
+  },
+  "relays": {
+    "79c2cae114ea28a981e7559b4fe7854a473521a8d22a66bbab9fa248eb820ff6": [
+      "wss://gleasonator.dev/relay",
+      "wss://slime.church/relay"
+    ]
+  }
+}
