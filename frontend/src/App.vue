@@ -1,48 +1,3 @@
-<script lang="ts" setup>
-// This is the 'mother' component, it's job is to provide the routes and components based on the user's chosen language
-import { ref, computed } from "vue";
-import DetailedProjectVue from "./DetailedProject.vue";
-import Home from "./Home.vue";
-import NotFound from "./NotFound.vue";
-import HomePt from "./HomePt.vue";
-
-const routes: any = { "/home": Home, "/home-pt": HomePt };
-
-const currentPath = ref(window.location.hash);
-
-const currentLangSelected = ref("en");
-
-window.addEventListener("hashchange", () => {
-  currentPath.value = window.location.hash;
-});
-
-const currentView = computed(() => {
-  if (/^\/home(-pt)?\/[0-9]+$/.test(currentPath.value.slice(1))) {
-    // project-<any-number>, for example: project-2
-    return DetailedProjectVue;
-  }
-
-  return routes[currentPath.value.slice(1) || "/home"] || NotFound; // Be not found in the future
-});
-
-function goToHome() {
-  console.log(
-    window.location.hash.slice(1, "/home-pt".length + 1) === "/home-pt"
-  );
-  window.location.hash =
-    window.location.hash.slice(1, "/home-pt".length + 1) === "/home-pt"
-      ? "/home-pt"
-      : "/home";
-}
-
-async function resetReadMore() {
-  sessionStorage.clear();
-}
-
-resetReadMore();
-goToHome();
-</script>
-
 <template>
   <nav class="nav-app">
     <div class="my-name-container">
@@ -52,27 +7,60 @@ goToHome();
     <div class="language-container">
       <ul class="lang-ul">
         <li>
-          <a
-            :class="currentLangSelected === 'en' ? 'selected' : ''"
-            @click="currentLangSelected = 'en'"
-            href="#/home"
-            >English</a
+          <router-link
+            to="/"
+            :class="{ selected: currentLangSelected === 'en' }"
+            @click="setLanguage('en')"
           >
+            English
+          </router-link>
         </li>
         <li>
-          <a
-            :class="currentLangSelected === 'pt' ? 'selected' : ''"
-            @click="currentLangSelected = 'pt'"
-            href="#/home-pt"
-            >Português</a
+          <router-link
+            to="/pt"
+            :class="{ selected: currentLangSelected === 'pt' }"
+            @click="setLanguage('pt')"
           >
+            Português
+          </router-link>
         </li>
       </ul>
     </div>
   </nav>
 
-  <component :is="currentView" />
+  <router-view />
 </template>
+
+<script lang="ts" setup>
+import { ref, watch } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
+
+const currentLangSelected = ref('en');
+
+const router = useRouter();
+const route = useRoute();
+
+watch(route, (newRoute) => {
+  const path = newRoute.path;
+  if (path.includes('/pt')) {
+    currentLangSelected.value = 'pt';
+  } else {
+    currentLangSelected.value = 'en';
+  }
+});
+
+function goToHome() {
+  if (currentLangSelected.value === 'pt') {
+    router.push('/pt');
+  } else {
+    router.push('/');
+  }
+}
+
+function setLanguage(lang: string) {
+  currentLangSelected.value = lang;
+}
+</script>
 
 <style scoped>
 .language-container {
@@ -84,13 +72,6 @@ goToHome();
   right: 0;
   top: 0;
   padding: 0.5rem;
-}
-
-.world-icon {
-  width: 25px;
-  height: 25px;
-  fill: var(--main-font-color);
-  margin: 0 0.5rem;
 }
 
 #patrick {
