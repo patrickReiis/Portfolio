@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 
 const props = defineProps({
   technologies: Array,
@@ -11,21 +11,16 @@ const toggleReadMore = ref(false);
 
 const postReadMorePrefix = "postReadMore";
 
-function getCurrentLocation() {
-  const currentURL = window.location.hash;
-  return currentURL;
-}
-
 function handleToggleReadMore(id: number | undefined) {
   toggleReadMore.value = !toggleReadMore.value;
   if (toggleReadMore.value === true) {
     sessionStorage.setItem(`postReadMore${id}`, "true");
-    return;
+  } else {
+    sessionStorage.setItem(`${postReadMorePrefix}${id}`, "false");
   }
-  sessionStorage.setItem(`${postReadMorePrefix}${id}`, "false");
 }
 
-async function getReadMoreState() {
+function getReadMoreState() {
   const shouldReadMore = sessionStorage.getItem(
     `${postReadMorePrefix}${props.projectId}`
   );
@@ -35,7 +30,9 @@ async function getReadMoreState() {
   }
 }
 
-getReadMoreState();
+onMounted(() => {
+  getReadMoreState();
+});
 </script>
 
 <template>
@@ -55,12 +52,19 @@ getReadMoreState();
     ></div>
   </div>
   <div class="read-more-container">
-    <a
+    <span
       class="read-more"
-      @click="handleToggleReadMore(projectId)"
-      v-bind:href="getCurrentLocation()"
+      @click.prevent="handleToggleReadMore(projectId)"
     >
       {{ toggleReadMore == false ? "Read More" : "Hide" }}
-    </a>
+    </span>
   </div>
 </template>
+
+<style scoped>
+.read-more {
+  cursor: pointer;
+  text-decoration: underline;
+  color: var(--main-font-color);
+}
+</style>
