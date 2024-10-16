@@ -22,7 +22,7 @@ postsResolve();
     <h2 class="title">ABOUT ME</h2>
     <div class="about-me-content">
       <p>
-        I am a software developer from Brazil looking for a programming job.
+        I am a developer from Brazil building open source software.
       </p>
     </div>
   </header>

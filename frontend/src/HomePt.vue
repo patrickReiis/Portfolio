@@ -22,8 +22,7 @@ postsResolve();
     <h2 class="title">SOBRE MIM</h2>
     <div class="about-me-content">
       <p>
-        Eu sou um desenvolvedor de software do Brasil procurando por uma vaga na
-        área de programação.
+        Sou um desenvolvedor do Brasil construindo software open source.
       </p>
     </div>
   </header>
