@@ -230,13 +230,14 @@
         flex-flow: row-reverse wrap;
         justify-content: space-around;
         max-width: 1400px;
-        margin: auto;
+        margin: 4rem auto 2rem auto;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(179, 166, 199, 0.3);
       }
 
       .contact-title {
         font-weight: bold;
-        border-top: 3px solid var(--main-font-color);
-        padding-top: 1rem;
+        margin-bottom: 1rem;
       }
 
       .contact-content {
@@ -245,6 +246,11 @@
 
       .contact-content a {
         color: var(--main-font-color);
+      }
+
+      .contact-content p:last-child {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
       }
 
       /* Mobile responsiveness */
