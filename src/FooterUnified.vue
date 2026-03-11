@@ -35,3 +35,10 @@ const { t } = useLanguage();
     </div>
   </footer>
 </template>
+
+<style scoped>
+.contact-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+</style>
