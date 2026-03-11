@@ -118,6 +118,27 @@
         font-weight: 700;
       }
 
+      /* Profile Photo */
+      .profile-photo-container {
+        text-align: center;
+        margin: 3rem auto;
+      }
+
+      .profile-photo {
+        width: 300px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 1rem;
+        border: 3px solid var(--division-surround-color);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .profile-photo:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+      }
+
       /* About section */
       header {
         margin: 4rem auto;
@@ -317,6 +338,15 @@
           flex-direction: column;
           gap: 0.5rem;
         }
+
+        .profile-photo {
+          width: 250px;
+          height: 330px;
+        }
+
+        .profile-photo-container {
+          margin: 2rem auto;
+        }
       }
     </style>
   </head>
@@ -330,6 +360,10 @@
         <button id="lang-pt" class="lang-btn">🇧🇷 PT</button>
       </div>
     </nav>
+
+    <div class="profile-photo-container">
+      <img src="https://blossom.ditto.pub/af3cc4cad1e84b48f7fdeacf22f35b0b46d55d9f01daba4ded3e18f75e1defff.jpeg" alt="Patrick PReis" class="profile-photo">
+    </div>
 
     <header class="general-container">
       <h2 id="about-title" class="title">ABOUT ME</h2>
