@@ -2772,7 +2772,7 @@ function ce4(t2) {
 }
 
 // fs:/projects/portfolio/src/App.vue
-var App_default = "./App-2VQKEZZD.vue";
+var App_default = "./App-UCADZL3Q.vue";
 
 // esm:https://esm.sh/node/buffer.mjs
 function ut2(t2) {
@@ -6145,8 +6145,8 @@ function en3(e) {
   return W6;
 }
 
-// fs:/projects/portfolio/src/HomeUnified.vue
-var HomeUnified_default = "./HomeUnified-4CG6TUAU.vue";
+// fs:/projects/portfolio/src/Home.vue
+var Home_default = "./Home-IPD2K3CU.vue";
 
 // fs:/projects/portfolio/src/DetailedProject.vue
 var DetailedProject_default = "./DetailedProject-VMLEZGY3.vue";
@@ -6159,22 +6159,11 @@ var routes = [
   {
     path: "/",
     name: "Home",
-    component: HomeUnified_default
-  },
-  {
-    path: "/pt",
-    name: "HomePt",
-    component: HomeUnified_default
+    component: Home_default
   },
   {
     path: "/home/:id",
     name: "DetailedProject",
-    component: DetailedProject_default,
-    props: true
-  },
-  {
-    path: "/home-pt/:id",
-    name: "DetailedProjectPt",
     component: DetailedProject_default,
     props: true
   },
@@ -6268,4 +6257,4 @@ vue-router/dist/vue-router.mjs:
    * @license MIT
    *)
 */
-//# sourceMappingURL=main-UOGA65DA.js.map
+//# sourceMappingURL=main-47OGXMSD.js.map
