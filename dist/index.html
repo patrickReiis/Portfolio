@@ -222,37 +222,7 @@
 
 
 
-      /* Dev links */
-      .dev-links-section {
-        display: flex;
-        gap: 2rem;
-        justify-content: center;
-        margin: 2rem 0 1rem 0;
-        padding: 1rem 0;
-        border-top: 1px solid var(--division-surround-color);
-        opacity: 0.4;
-      }
 
-      .dev-link {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .dev-link a {
-        color: var(--main-font-color);
-        text-decoration: none;
-      }
-
-      .dev-link a:hover {
-        text-decoration: underline;
-      }
-
-      .github-icon, .gitlab-icon {
-        fill: var(--main-font-color);
-        width: 25px;
-        height: 25px;
-      }
 
       /* Footer */
       .footer-contact {
@@ -283,10 +253,7 @@
           flex-direction: row;
           justify-content: space-around;
         }
-        
-        .dev-links-section {
-          gap: 4rem;
-        }
+
       }
 
       @media screen and (min-width: 0px) and (max-width: 700px) {
@@ -311,8 +278,8 @@
         <h1 class="my-name">PREIS</h1>
       </div>
       <div class="language-container">
-        <button id="lang-en" class="lang-btn selected">EN</button>
-        <button id="lang-pt" class="lang-btn">PT</button>
+        <button id="lang-en" class="lang-btn selected">🇺🇸 EN</button>
+        <button id="lang-pt" class="lang-btn">🇧🇷 PT</button>
       </div>
     </nav>
 
@@ -363,30 +330,18 @@
         </div>
       </div>
 
-      <!-- Dev Links -->
-      <div class="dev-links-section">
-        <div class="dev-link">
-          <svg class="github-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16 0.396c-8.839 0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183 0.803 0.151 1.093-0.344 1.093-0.772 0-0.38-0.009-1.385-0.015-2.719-4.453 0.964-5.391-2.151-5.391-2.151-0.729-1.844-1.781-2.339-1.781-2.339-1.448-0.989 0.115-0.968 0.115-0.968 1.604 0.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328 0.14-1.031 0.557-1.74 1.011-2.135-3.552-0.401-7.287-1.776-7.287-7.907 0-1.751 0.62-3.177 1.645-4.297-0.177-0.401-0.719-2.031 0.141-4.235 0 0 1.339-0.427 4.4 1.641 1.281-0.355 2.641-0.532 4-0.541 1.36 0.009 2.719 0.187 4 0.541 3.043-2.068 4.381-1.641 4.381-1.641 0.859 2.204 0.317 3.833 0.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297 0 6.145-3.74 7.5-7.296 7.891 0.556 0.479 1.077 1.464 1.077 2.959 0 2.14-0.020 3.864-0.020 4.385 0 0.416 0.28 0.916 1.104 0.755 6.4-2.093 10.979-8.093 10.979-15.156 0-8.833-7.161-16-16-16z"></path>
-          </svg>
-          <a href="https://github.com/patrickReiis/" target="_blank">GitHub</a>
-        </div>
-        <div class="dev-link">
-          <svg class="gitlab-icon" viewBox="0 0 24 24">
-            <path fill="#FCA326" d="M23.955 13.587l-1.342-4.135-2.664-8.189c-.135-.423-.73-.423-.867 0L16.418 9.45H7.582L4.918 1.263c-.135-.423-.73-.423-.867 0L1.387 9.452.045 13.587a.849.849 0 0 0 .307.95l11.683 8.508 11.683-8.508a.849.849 0 0 0 .307-.95z"></path>
-          </svg>
-          <a href="https://gitlab.com/patrickReiis" target="_blank">GitLab</a>
-        </div>
-      </div>
+
     </main>
 
     <footer class="footer-contact general-container">
       <div class="contact-container">
         <h2 id="contact-title" class="title contact-title">CONNECT WITH ME</h2>
         <div class="contact-content">
+          <p>
+            <a href="mailto:patrickpereirareal1@gmail.com">patrickpereirareal1@gmail.com</a>
+          </p>
           <p id="contact-text">
-            Contact me at patrickpereirareal1@gmail.com<br>
-            I am an independent artist open to collaborations.
+            I am an independent artist open to collaborations with other musicians/singers.
           </p>
         </div>
       </div>
@@ -403,7 +358,7 @@
           donationTitle: 'Support My Music',
           donationText: "I'm an independent artist. Support my journey with Bitcoin:",
           contactTitle: 'CONNECT WITH ME',
-          contactText: 'Contact me at patrickpereirareal1@gmail.com<br>I am an independent artist open to collaborations.'
+          contactText: 'I am an independent artist open to collaborations with other musicians/singers.'
         },
         pt: {
           aboutTitle: 'SOBRE MIM',
@@ -415,7 +370,7 @@
           donationTitle: 'Apoie Minha Música',
           donationText: 'Sou um artista independente. Apoie minha jornada com Bitcoin:',
           contactTitle: 'CONECTE-SE COMIGO',
-          contactText: 'Entre em contato comigo em patrickpereirareal1@gmail.com<br>Sou um artista independente aberto a colaborações.'
+          contactText: 'Sou um artista independente aberto a colaborações com outros músicos/cantores.'
         }
       };
 
@@ -432,7 +387,7 @@
         document.getElementById('donation-title').textContent = t.donationTitle;
         document.getElementById('donation-text').textContent = t.donationText;
         document.getElementById('contact-title').textContent = t.contactTitle;
-        document.getElementById('contact-text').innerHTML = t.contactText;
+        document.getElementById('contact-text').textContent = t.contactText;
       }
 
       function setLanguage(lang) {
@@ -444,9 +399,11 @@
         document.getElementById(`lang-${lang}`).classList.add('selected');
       }
 
-      // Set up event listeners
-      document.getElementById('lang-en').addEventListener('click', () => setLanguage('en'));
-      document.getElementById('lang-pt').addEventListener('click', () => setLanguage('pt'));
+      // Set up event listeners when DOM is ready
+      document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('lang-en').addEventListener('click', () => setLanguage('en'));
+        document.getElementById('lang-pt').addEventListener('click', () => setLanguage('pt'));
+      });
     </script>
   
 </body></html>
