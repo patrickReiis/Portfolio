@@ -30,7 +30,8 @@
 </template>
 
 <script lang="ts" setup>
-import { useRouter, useRoute, onMounted, watch } from 'vue';
+import { onMounted, watch } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
 import { useLanguage } from './composables/useLanguage';
 
 const { t, setLanguage, getCurrentLanguage } = useLanguage();
