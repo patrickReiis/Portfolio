@@ -45,6 +45,36 @@
         padding-top: 1rem;
         background: var(--background-color);
         text-align: center;
+        position: relative;
+      }
+
+      .language-container {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .lang-btn {
+        background: transparent;
+        border: 1px solid var(--division-surround-color);
+        color: var(--main-font-color);
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        font-family: inherit;
+        transition: all 0.3s ease;
+      }
+
+      .lang-btn:hover {
+        background: rgba(179, 166, 199, 0.3);
+      }
+
+      .lang-btn.selected {
+        background: var(--division-surround-color);
+        color: var(--background-color);
+        font-weight: bold;
       }
 
       .my-name {
@@ -191,58 +221,17 @@
         word-break: break-all;
       }
 
-      /* Nostalgic section */
-      .nostalgia-title {
-        margin-top: 4rem;
-        opacity: 0.8;
-      }
 
-      .nostalgia-description {
-        color: var(--main-font-color);
-        text-align: center;
-        margin-bottom: 2rem;
-        opacity: 0.7;
-        font-style: italic;
-      }
-
-      .open-source-container {
-        margin: 0.5rem;
-        opacity: 0.6;
-      }
-
-      .open-source-project {
-        margin: 0.5rem auto;
-        max-width: 750px;
-      }
-
-      .open-source-project-title {
-        font-weight: bold;
-        margin-bottom: 0.5rem;
-      }
-
-      .open-source-project ul {
-        list-style-position: inside;
-        margin-left: 1rem;
-      }
-
-      .open-source-project li {
-        margin-bottom: 0.25rem;
-      }
-
-      .open-source-project a {
-        color: var(--main-font-color);
-        text-decoration: underline;
-      }
 
       /* Dev links */
       .dev-links-section {
         display: flex;
         gap: 2rem;
         justify-content: center;
-        margin: 3rem 0;
-        padding: 2rem 0;
+        margin: 2rem 0 1rem 0;
+        padding: 1rem 0;
         border-top: 1px solid var(--division-surround-color);
-        opacity: 0.7;
+        opacity: 0.4;
       }
 
       .dev-link {
@@ -322,26 +311,30 @@
         <h1 class="my-name">PATRICK</h1>
         <h1 class="my-name">PREIS</h1>
       </div>
+      <div class="language-container">
+        <button id="lang-en" class="lang-btn selected">EN</button>
+        <button id="lang-pt" class="lang-btn">PT</button>
+      </div>
     </nav>
 
     <header class="general-container">
-      <h2 class="title">ABOUT ME</h2>
+      <h2 id="about-title" class="title">ABOUT ME</h2>
       <div class="about-me-content">
-        <p>
-          I used to be an open source developer but I decided to quit it to become a singer. I write my own lyrics and I have my own genre, and I explore different genres (such as rap, rock, eurodance, brazilian funk, R&B, gospel, pagode, arrocha, etc).
+        <p id="about-text">
+          I am an independent musician from Brazil who explores multiple musical genres, from rap and rock to Brazilian funk, R&B, gospel, and electronic music. I write my own lyrics and create original compositions that blend different styles to tell authentic stories. Music is my passion and my way of connecting with the world.
         </p>
       </div>
     </header>
 
     <main class="general-container">
-      <h2 class="title project-title">MUSIC PLATFORMS</h2>
+      <h2 id="platforms-title" class="title project-title">MUSIC PLATFORMS</h2>
       <div class="music-platforms-container">
         <div class="platform-item">
           <a href="https://open.spotify.com/artist/0l9mI7bCNJXEJg0Sa6b5Zk" target="_blank" class="platform-link spotify">
             <svg class="platform-icon" viewBox="0 0 24 24" width="30" height="30">
               <path fill="#1DB954" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.32 11.28-1.08 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
             </svg>
-            Listen on Spotify
+            <span id="spotify-text">Listen on Spotify</span>
           </a>
         </div>
         <div class="platform-item">
@@ -349,7 +342,7 @@
             <svg class="platform-icon" viewBox="0 0 24 24" width="30" height="30">
               <path fill="#FF0000" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
             </svg>
-            Watch on YouTube
+            <span id="youtube-text">Watch on YouTube</span>
           </a>
         </div>
         <div class="platform-item">
@@ -357,43 +350,21 @@
             <svg class="platform-icon" viewBox="0 0 24 24" width="30" height="30">
               <path fill="#9C27B0" d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm5.568 8.16c-.161.73-.845 1.23-1.57 1.23-.191 0-.382-.03-.57-.1l-1.298-.49c-.648-.24-1.39-.24-2.037 0l-1.299.49c-.188.07-.379.1-.569.1-.726 0-1.41-.5-1.571-1.23-.161-.73.191-1.46.845-1.78l3.13-1.52c.456-.22.989-.22 1.445 0l3.13 1.52c.654.32 1.006 1.05.845 1.78z"/>
             </svg>
-            Nostr Profile
+            <span id="nostr-text">Nostr Profile</span>
           </a>
         </div>
       </div>
 
       <!-- Bitcoin Donation Section -->
       <div class="donation-section">
-        <h3 class="donation-title">Support My Music</h3>
-        <p class="donation-text">I'm an independent artist. Support my journey with Bitcoin:</p>
+        <h3 id="donation-title" class="donation-title">Support My Music</h3>
+        <p id="donation-text" class="donation-text">I'm an independent artist. Support my journey with Bitcoin:</p>
         <div class="bitcoin-address">
           <code>bc1qtr4ju5r0wnn06ld92zgalvrw477s65q2u470ar</code>
         </div>
       </div>
 
-      <!-- Nostalgic Proof Section -->
-      <h2 class="title project-title nostalgia-title">NOSTALGIC PROOF</h2>
-      <p class="nostalgia-description">My past as a developer - keeping these as memories of my coding journey:</p>
-      <div class="open-source-container">
-        <div class="open-source-project">
-          <p class="open-source-project-title">InterPlanetary File System (IPFS)</p>
-          <ul>
-            <li>Fixed two issues and wrote tests from scratch using the Go Programming Language.</li>
-            <li>+117 lines added and -1 line removed.</li>
-            <li><a href="https://github.com/ipfs/kubo/pull/10143" target="_blank">See Pull Request</a></li>
-          </ul>
-        </div>
-        <div class="open-source-project">
-          <p class="open-source-project-title">Monero Wallet Generator</p>
-          <ul>
-            <li>Improved user experience with a toggleable styled QR Code using JavaScript and CSS.</li>
-            <li>+30 lines added and 0 line removed.</li>
-            <li><a href="https://github.com/moneromooo-monero/monero-wallet-generator/pull/31" target="_blank">See Pull Request</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- GitHub/GitLab Links -->
+      <!-- Dev Links -->
       <div class="dev-links-section">
         <div class="dev-link">
           <svg class="github-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
@@ -412,17 +383,71 @@
 
     <footer class="footer-contact general-container">
       <div class="contact-container">
-        <h2 class="title contact-title">CONNECT WITH ME</h2>
+        <h2 id="contact-title" class="title contact-title">CONNECT WITH ME</h2>
         <div class="contact-content">
-          <p>
+          <p id="contact-text">
             Contact me at patrickpereirareal1@gmail.com<br>
             I am an independent artist open to collaborations.
           </p>
-          <div>
-            📄<a href="https://drive.google.com/file/d/10EEpL6ehDmePN424uQrAiUPDKW69z64h/view?usp=share_link" target="_blank">Music Portfolio</a>
-          </div>
         </div>
       </div>
     </footer>
+    <script>
+      const translations = {
+        en: {
+          aboutTitle: 'ABOUT ME',
+          aboutText: 'I am an independent musician from Brazil who explores multiple musical genres, from rap and rock to Brazilian funk, R&B, gospel, and electronic music. I write my own lyrics and create original compositions that blend different styles to tell authentic stories. Music is my passion and my way of connecting with the world.',
+          platformsTitle: 'MUSIC PLATFORMS',
+          spotify: 'Listen on Spotify',
+          youtube: 'Watch on YouTube',
+          nostr: 'Nostr Profile',
+          donationTitle: 'Support My Music',
+          donationText: "I'm an independent artist. Support my journey with Bitcoin:",
+          contactTitle: 'CONNECT WITH ME',
+          contactText: 'Contact me at patrickpereirareal1@gmail.com<br>I am an independent artist open to collaborations.'
+        },
+        pt: {
+          aboutTitle: 'SOBRE MIM',
+          aboutText: 'Sou um músico independente do Brasil que explora múltiplos gêneros musicais, desde rap e rock até funk brasileiro, R&B, gospel e música eletrônica. Escrevo minhas próprias letras e crio composições originais que misturam diferentes estilos para contar histórias autênticas. A música é minha paixão e minha forma de me conectar com o mundo.',
+          platformsTitle: 'PLATAFORMAS MUSICAIS',
+          spotify: 'Ouça no Spotify',
+          youtube: 'Assista no YouTube',
+          nostr: 'Perfil Nostr',
+          donationTitle: 'Apoie Minha Música',
+          donationText: 'Sou um artista independente. Apoie minha jornada com Bitcoin:',
+          contactTitle: 'CONECTE-SE COMIGO',
+          contactText: 'Entre em contato comigo em patrickpereirareal1@gmail.com<br>Sou um artista independente aberto a colaborações.'
+        }
+      };
+
+      let currentLang = 'en';
+
+      function updateContent(lang) {
+        const t = translations[lang];
+        document.getElementById('about-title').textContent = t.aboutTitle;
+        document.getElementById('about-text').textContent = t.aboutText;
+        document.getElementById('platforms-title').textContent = t.platformsTitle;
+        document.getElementById('spotify-text').textContent = t.spotify;
+        document.getElementById('youtube-text').textContent = t.youtube;
+        document.getElementById('nostr-text').textContent = t.nostr;
+        document.getElementById('donation-title').textContent = t.donationTitle;
+        document.getElementById('donation-text').textContent = t.donationText;
+        document.getElementById('contact-title').textContent = t.contactTitle;
+        document.getElementById('contact-text').innerHTML = t.contactText;
+      }
+
+      function setLanguage(lang) {
+        currentLang = lang;
+        updateContent(lang);
+        
+        // Update button states
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('selected'));
+        document.getElementById(`lang-${lang}`).classList.add('selected');
+      }
+
+      // Set up event listeners
+      document.getElementById('lang-en').addEventListener('click', () => setLanguage('en'));
+      document.getElementById('lang-pt').addEventListener('click', () => setLanguage('pt'));
+    </script>
   </body>
 </html>
