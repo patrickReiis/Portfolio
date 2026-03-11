@@ -9,8 +9,7 @@ const { t } = useLanguage();
     <div class="contact-container">
       <h2 class="title contact-title">{{ t.title.contact }}</h2>
       <div class="contact-content">
-        <p>{{ t.contact.description.email }}</p>
-        <p>{{ t.contact.description.collaboration }}</p>
+        <p v-html="t.contact.description"></p>
         <div class="linkedin-container">
           📄<a
             href="https://drive.google.com/file/d/10EEpL6ehDmePN424uQrAiUPDKW69z64h/view?usp=share_link"

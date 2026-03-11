@@ -14,7 +14,10 @@ export interface Translations {
     portuguese: string;
   };
   contact: {
-    description: string;
+    description: {
+      email: string;
+      collaboration: string;
+    };
     resume: string;
     github: string;
     sourceCode: string;
@@ -60,7 +63,10 @@ export const translations: Record<string, Translations> = {
       portuguese: "Português"
     },
     contact: {
-      description: "Contact me at patrickpereirareal1@gmail.com<br />I am an independent artist open to collaborations.",
+      description: {
+        email: "Contact me at patrickpereirareal1@gmail.com",
+        collaboration: "I am an independent artist open to collaborations."
+      },
       resume: "Music Portfolio",
       github: "Source Code",
       sourceCode: "Source Code"
@@ -110,7 +116,10 @@ export const translations: Record<string, Translations> = {
       portuguese: "Português"
     },
     contact: {
-      description: "Entre em contato comigo em patrickpereirareal1@gmail.com<br />Sou um artista independente aberto a colaborações.",
+      description: {
+        email: "Entre em contato comigo em patrickpereirareal1@gmail.com",
+        collaboration: "Sou um artista independente aberto a colaborações com outros músicos/cantores."
+      },
       resume: "Portfólio Musical",
       github: "Código Fonte",
       sourceCode: "Código fonte"
