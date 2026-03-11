@@ -157,12 +157,6 @@
     text-align: center;
 }
 
-.contact-content p {
-    font-size: 1.3rem !important;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-}
-
 .general-container {
   color: var(--main-font-color);
 }
@@ -273,15 +267,4 @@ a {
 }
 
 @media screen and (min-width:700px) and (max-width:1035px){
-}
-
-/* FORCE CONTACT TEXT TO BE LARGER */
-.footer-contact .contact-content p {
-    font-size: 1.3rem !important;
-    line-height: 1.6 !important;
-}
-
-footer.footer-contact .contact-content p {
-    font-size: 1.3rem !important;
-    line-height: 1.6 !important;
 }

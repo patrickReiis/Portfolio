@@ -37,10 +37,12 @@ const { t } = useLanguage();
   </footer>
 </template>
 
-<style scoped>
-.contact-content p {
-  font-size: 1.3rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
+<style>
+/* Global styles for footer contact text - FORCE LARGE FONT */
+.footer-contact .contact-content p {
+  font-size: 18px !important;
+  line-height: 1.6 !important;
+  margin-bottom: 1rem !important;
 }
 </style>
+

@@ -9,7 +9,8 @@ const { t } = useLanguage();
     <div class="contact-container">
       <h2 class="title contact-title">{{ t.title.contact }}</h2>
       <div class="contact-content">
-        <p v-html="t.contact.description"></p>
+        <p>{{ t.contact.description.email }}</p>
+        <p>{{ t.contact.description.collaboration }}</p>
         <div class="linkedin-container">
           📄<a
             href="https://drive.google.com/file/d/10EEpL6ehDmePN424uQrAiUPDKW69z64h/view?usp=share_link"
@@ -36,10 +37,12 @@ const { t } = useLanguage();
   </footer>
 </template>
 
-<style scoped>
-.contact-content p {
-  font-size: 1.3rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
+<style>
+/* Global styles for footer contact text - FORCE LARGE FONT */
+.footer-contact .contact-content p {
+  font-size: 18px !important;
+  line-height: 1.6 !important;
+  margin-bottom: 1rem !important;
 }
 </style>
+
