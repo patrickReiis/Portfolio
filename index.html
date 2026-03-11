@@ -348,6 +348,7 @@
       </div>
     </footer>
     <script>
+      // Language translations
       const translations = {
         en: {
           aboutTitle: 'ABOUT ME',
@@ -378,32 +379,67 @@
       let currentLang = 'en';
 
       function updateContent(lang) {
+        console.log('Updating content to:', lang); // Debug log
         const t = translations[lang];
-        document.getElementById('about-title').textContent = t.aboutTitle;
-        document.getElementById('about-text').textContent = t.aboutText;
-        document.getElementById('platforms-title').textContent = t.platformsTitle;
-        document.getElementById('spotify-text').textContent = t.spotify;
-        document.getElementById('youtube-text').textContent = t.youtube;
-        document.getElementById('nostr-text').textContent = t.nostr;
-        document.getElementById('donation-title').textContent = t.donationTitle;
-        document.getElementById('donation-text').textContent = t.donationText;
-        document.getElementById('contact-title').textContent = t.contactTitle;
-        document.getElementById('contact-text').textContent = t.contactText;
+        
+        // Update all text content
+        const aboutTitle = document.getElementById('about-title');
+        const aboutText = document.getElementById('about-text');
+        const platformsTitle = document.getElementById('platforms-title');
+        const spotifyText = document.getElementById('spotify-text');
+        const youtubeText = document.getElementById('youtube-text');
+        const nostrText = document.getElementById('nostr-text');
+        const donationTitle = document.getElementById('donation-title');
+        const donationText = document.getElementById('donation-text');
+        const contactTitle = document.getElementById('contact-title');
+        const contactText = document.getElementById('contact-text');
+
+        if (aboutTitle) aboutTitle.textContent = t.aboutTitle;
+        if (aboutText) aboutText.textContent = t.aboutText;
+        if (platformsTitle) platformsTitle.textContent = t.platformsTitle;
+        if (spotifyText) spotifyText.textContent = t.spotify;
+        if (youtubeText) youtubeText.textContent = t.youtube;
+        if (nostrText) nostrText.textContent = t.nostr;
+        if (donationTitle) donationTitle.textContent = t.donationTitle;
+        if (donationText) donationText.textContent = t.donationText;
+        if (contactTitle) contactTitle.textContent = t.contactTitle;
+        if (contactText) contactText.textContent = t.contactText;
       }
 
       function setLanguage(lang) {
+        console.log('Setting language to:', lang); // Debug log
         currentLang = lang;
         updateContent(lang);
         
         // Update button states
         document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('selected'));
-        document.getElementById(`lang-${lang}`).classList.add('selected');
+        const selectedBtn = document.getElementById(`lang-${lang}`);
+        if (selectedBtn) selectedBtn.classList.add('selected');
       }
 
-      // Set up event listeners when DOM is ready
+      // Wait for DOM to be fully loaded
       document.addEventListener('DOMContentLoaded', function() {
-        document.getElementById('lang-en').addEventListener('click', () => setLanguage('en'));
-        document.getElementById('lang-pt').addEventListener('click', () => setLanguage('pt'));
+        console.log('DOM loaded, setting up language buttons'); // Debug log
+        
+        const enBtn = document.getElementById('lang-en');
+        const ptBtn = document.getElementById('lang-pt');
+        
+        if (enBtn) {
+          enBtn.addEventListener('click', function() {
+            console.log('EN button clicked'); // Debug log
+            setLanguage('en');
+          });
+        }
+        
+        if (ptBtn) {
+          ptBtn.addEventListener('click', function() {
+            console.log('PT button clicked'); // Debug log
+            setLanguage('pt');
+          });
+        }
+        
+        // Initialize with English
+        setLanguage('en');
       });
     </script>
   </body>
