@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Patrick PReis">
+    <meta property="og:description" content="Independent Singer-Songwriter exploring multiple genres from rap to R&amp;B. Original lyrics, original style.">
+    <meta property="og:image" content="https://patrickdosreis.com/meta-logo.png">
+    <meta property="og:type" content="website">
+
+    <title>Patrick PReis - Singer-Songwriter</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap');
+
+      /* Color scheme */
+      :root {
+        --background-color: #4A3A5F;
+        --main-font-color: white;
+        --project-bg-color: #1A121B;
+        --division-surround-color: #B3A6C7;
+        --section-gap: 160px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        color: var(--main-font-color);
+        background: var(--background-color);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      /* Navigation */
+      .nav-app {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        padding-top: 1rem;
+        background: var(--background-color);
+        text-align: center;
+        position: relative;
+      }
+
+      .language-container {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .lang-btn {
+        background: transparent;
+        border: 1px solid var(--division-surround-color);
+        color: var(--main-font-color);
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        font-family: inherit;
+        transition: all 0.3s ease;
+      }
+
+      .lang-btn:hover {
+        background: rgba(179, 166, 199, 0.3);
+      }
+
+      .lang-btn.selected {
+        background: var(--division-surround-color);
+        color: var(--background-color);
+        font-weight: bold;
+      }
+
+      .my-name {
+        color: var(--main-font-color);
+        font-size: 4.5rem;
+        font-weight: 700;
+        line-height: 1;
+        margin: 0 auto;
+        display: inline;
+      }
+
+      .my-name-container {
+        white-space: nowrap;
+        margin-bottom: 3rem;
+      }
+
+      .my-name:first-child::after {
+        content: " ";
+      }
+
+      /* General container */
+      .general-container {
+        color: var(--main-font-color);
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .title {
+        text-align: center;
+        margin: 0.5rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      .project-title {
+        border-bottom: 3px solid var(--main-font-color);
+        width: fit-content;
+        margin: 3rem auto 2rem auto;
+        font-size: 2.7rem;
+        font-weight: 700;
+      }
+
+      /* Profile Photo */
+      .profile-photo-container {
+        text-align: center;
+        margin: 3rem auto;
+      }
+
+      .profile-photo {
+        width: 300px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 1rem;
+        border: 3px solid var(--division-surround-color);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .profile-photo:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+      }
+
+      /* About section */
+      header {
+        margin: 4rem auto;
+      }
+
+      .about-me-content {
+        display: flex;
+        align-items: center;
+        flex-flow: column wrap;
+        text-align: center;
+        margin: auto 0.8rem;
+        font-size: 1.1rem;
+      }
+
+      /* Music platforms */
+      .music-platforms-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .platform-item {
+        display: flex;
+        justify-content: center;
+      }
+
+      .platform-link {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 2rem;
+        color: var(--main-font-color);
+        text-decoration: none;
+        border: 2px solid;
+        border-radius: 1rem;
+        transition: all 0.3s ease;
+        font-weight: bold;
+        min-width: 200px;
+        justify-content: center;
+      }
+
+      .platform-link.spotify {
+        border-color: #1DB954;
+        background: rgba(29, 185, 84, 0.1);
+      }
+
+      .platform-link.spotify:hover {
+        background: rgba(29, 185, 84, 0.2);
+        transform: translateY(-2px);
+      }
+
+      .platform-link.youtube {
+        border-color: #FF0000;
+        background: rgba(255, 0, 0, 0.1);
+      }
+
+      .platform-link.youtube:hover {
+        background: rgba(255, 0, 0, 0.2);
+        transform: translateY(-2px);
+      }
+
+      .platform-link.nostr {
+        border-color: #9C27B0;
+        background: rgba(156, 39, 176, 0.1);
+      }
+
+      .platform-link.nostr:hover {
+        background: rgba(156, 39, 176, 0.2);
+        transform: translateY(-2px);
+      }
+
+      .platform-link.instagram {
+        border-color: #E4405F;
+        background: rgba(228, 64, 95, 0.1);
+      }
+
+      .platform-link.instagram:hover {
+        background: rgba(228, 64, 95, 0.2);
+        transform: translateY(-2px);
+      }
+
+      /* Donation section */
+      .donation-section {
+        background: var(--project-bg-color);
+        padding: 2rem;
+        border-radius: 1rem;
+        margin: 3rem 0;
+        text-align: center;
+      }
+
+      .donation-title {
+        color: var(--main-font-color);
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      .donation-text {
+        color: var(--main-font-color);
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+      }
+
+      .bitcoin-address {
+        background: rgba(166, 166, 166, 0.2);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--division-surround-color);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .bitcoin-address code {
+        color: #FFD700;
+        font-size: 1.1rem;
+        font-weight: bold;
+        word-break: break-all;
+        flex: 1;
+      }
+
+      .copy-btn {
+        background: var(--division-surround-color);
+        border: none;
+        color: var(--background-color);
+        padding: 0.5rem 1rem;
+        border-radius: 0.3rem;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+      }
+
+      .copy-btn:hover {
+        background: var(--main-font-color);
+      }
+
+      .copy-btn.copied {
+        background: #4CAF50;
+        color: white;
+      }
+
+
+
+
+
+      /* Footer */
+      .footer-contact {
+        display: flex;
+        flex-flow: row-reverse wrap;
+        justify-content: space-around;
+        max-width: 1400px;
+        margin: 4rem auto 2rem auto;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(179, 166, 199, 0.3);
+      }
+
+      .contact-title {
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .contact-content {
+        text-align: center;
+        font-size: 1.1rem;
+      }
+
+      .contact-content a {
+        color: var(--main-font-color);
+      }
+
+      .contact-content p {
+        margin-bottom: 2rem;
+      }
+
+      /* Mobile responsiveness */
+      @media screen and (min-width: 768px) {
+        .music-platforms-container {
+          flex-direction: row;
+          justify-content: space-around;
+        }
+
+      }
+
+      @media screen and (min-width: 0px) and (max-width: 700px) {
+        .my-name {
+          font-size: 3.5rem;
+        }
+
+        .my-name-container {
+          margin-top: 3rem;
+        }
+
+        .bitcoin-address {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        .profile-photo {
+          width: 250px;
+          height: 330px;
+        }
+
+        .profile-photo-container {
+          margin: 2rem auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav-app">
+      <div class="my-name-container">
+        <h1 class="my-name">PATRICK</h1><h1 class="my-name">PREIS</h1>
+      </div>
+      <div class="language-container">
+        <button id="lang-en" class="lang-btn selected">🇺🇸 EN</button>
+        <button id="lang-pt" class="lang-btn">🇧🇷 PT</button>
+      </div>
+    </nav>
+
+    <div class="profile-photo-container">
+      <img src="https://blossom.ditto.pub/af3cc4cad1e84b48f7fdeacf22f35b0b46d55d9f01daba4ded3e18f75e1defff.jpeg" alt="Patrick PReis" class="profile-photo">
+    </div>
+
+    <header class="general-container">
+      <h2 id="about-title" class="title">ABOUT ME</h2>
+      <div class="about-me-content">
+        <p id="about-text">
+          I am an independent musician from Brazil who explores multiple musical genres, from rap and rock to Brazilian funk, R&amp;B, gospel, and electronic music.<br><br>I write my own lyrics and live by them.
+        </p>
+      </div>
+    </header>
+
+    <main class="general-container">
+      <h2 id="platforms-title" class="title project-title">LISTEN TO MY SONGS AT:</h2>
+      <div class="music-platforms-container">
+        <div class="platform-item">
+          <a href="https://open.spotify.com/artist/0l9mI7bCNJXEJg0Sa6b5Zk" target="_blank" class="platform-link spotify">
+            <svg class="platform-icon" viewBox="0 0 24 24" width="30" height="30">
+              <path fill="#1DB954" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.32 11.28-1.08 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"></path>
+            </svg>
+            <span id="spotify-text">Listen on Spotify</span>
+          </a>
+        </div>
+        <div class="platform-item">
+          <a href="https://www.youtube.com/@patrick_preis" target="_blank" class="platform-link youtube">
+            <svg class="platform-icon" viewBox="0 0 24 24" width="30" height="30">
+              <path fill="#FF0000" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+            </svg>
+            <span id="youtube-text">Watch on YouTube</span>
+          </a>
+        </div>
+      <div class="platform-item">
+        <a href="https://njump.me/patrickdosreis.com" target="_blank" class="platform-link nostr">
+          <svg class="platform-icon" viewBox="0 0 24 24" width="30" height="30">
+            <path fill="#9C27B0" d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm5.568 8.16c-.161.73-.845 1.23-1.57 1.23-.191 0-.382-.03-.57-.1l-1.298-.49c-.648-.24-1.39-.24-2.037 0l-1.299.49c-.188.07-.379.1-.569.1-.726 0-1.41-.5-1.571-1.23-.161-.73.191-1.46.845-1.78l3.13-1.52c.456-.22.989-.22 1.445 0l3.13 1.52c.654.32 1.006 1.05.845 1.78z"></path>
+          </svg>
+          <span id="nostr-text">Nostr Profile</span>
+        </a>
+      </div>
+      <div class="platform-item">
+        <a href="https://www.instagram.com/patrick_preiis/" target="_blank" class="platform-link instagram">
+          <svg class="platform-icon" viewBox="0 0 24 24" width="30" height="30">
+            <path fill="#E4405F" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+          </svg>
+          <span id="instagram-text">Follow on Instagram</span>
+        </a>
+      </div>
+      </div>
+
+      <!-- Bitcoin Donation Section -->
+      <div class="donation-section">
+        <h3 id="donation-title" class="donation-title">Support My Music</h3>
+        <p id="donation-text" class="donation-text">I'm an independent artist. Support my journey with Bitcoin:</p>
+        <div class="bitcoin-address">
+          <code id="bitcoin-address">bc1qtr4ju5r0wnn06ld92zgalvrw477s65q2u470ar</code>
+          <button id="copy-btn" class="copy-btn">Copy</button>
+        </div>
+      </div>
+
+
+    </main>
+
+    <footer class="footer-contact general-container">
+      <div class="contact-container">
+        <h2 id="contact-title" class="title contact-title">CONNECT WITH ME</h2>
+        <div class="contact-content">
+          <p>
+            <a href="mailto:patrickpereirareal1@gmail.com">patrickpereirareal1@gmail.com</a><br>
+            <span id="contact-text">I am an independent artist open to collaborations with other musicians/singers.</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Language translations
+      const translations = {
+        en: {
+          aboutTitle: 'ABOUT ME',
+          aboutText: 'I am an independent musician from Brazil who explores multiple musical genres, from rap and rock to Brazilian funk, R&B, gospel, and electronic music.\n\nI write my own lyrics and live by them.',
+          platformsTitle: 'LISTEN TO MY SONGS AT:',
+          spotify: 'Listen on Spotify',
+          youtube: 'Watch on YouTube',
+          nostr: 'Nostr Profile',
+          instagram: 'Follow on Instagram',
+          donationTitle: 'Support My Music',
+          donationText: "I'm an independent artist. Support my journey with Bitcoin:",
+          contactTitle: 'CONNECT WITH ME',
+          contactText: 'I am an independent artist open to collaborations with other musicians/singers.'
+        },
+        pt: {
+          aboutTitle: 'SOBRE MIM',
+          aboutText: 'Sou um músico independente do Brasil que explora múltiplos gêneros musicais, desde rap e rock até funk brasileiro, R&B, gospel e música eletrônica.\n\nEscrevo minhas próprias letras e vivo elas.',
+          platformsTitle: 'OUÇA MINHAS MÚSICAS EM:',
+          spotify: 'Ouça no Spotify',
+          youtube: 'Assista no YouTube',
+          nostr: 'Perfil Nostr',
+          instagram: 'Siga no Instagram',
+          donationTitle: 'Apoie Minha Música',
+          donationText: 'Sou um artista independente. Apoie minha jornada com Bitcoin:',
+          contactTitle: 'CONECTE-SE COMIGO',
+          contactText: 'Sou um artista independente aberto a colaborações com outros músicos/cantores.'
+        }
+      };
+
+      let currentLang = 'en';
+
+      function updateContent(lang) {
+        console.log('Updating content to:', lang); // Debug log
+        const t = translations[lang];
+        
+        // Update all text content
+        const aboutTitle = document.getElementById('about-title');
+        const aboutText = document.getElementById('about-text');
+        const platformsTitle = document.getElementById('platforms-title');
+        const spotifyText = document.getElementById('spotify-text');
+        const youtubeText = document.getElementById('youtube-text');
+        const nostrText = document.getElementById('nostr-text');
+        const instagramText = document.getElementById('instagram-text');
+        const donationTitle = document.getElementById('donation-title');
+        const donationText = document.getElementById('donation-text');
+        const contactTitle = document.getElementById('contact-title');
+        const contactText = document.getElementById('contact-text');
+
+        if (aboutTitle) aboutTitle.textContent = t.aboutTitle;
+        if (aboutText) aboutText.innerHTML = t.aboutText.replace(/\n/g, '<br>');
+        if (platformsTitle) platformsTitle.textContent = t.platformsTitle;
+        if (spotifyText) spotifyText.textContent = t.spotify;
+        if (youtubeText) youtubeText.textContent = t.youtube;
+        if (nostrText) nostrText.textContent = t.nostr;
+        if (instagramText) instagramText.textContent = t.instagram;
+        if (donationTitle) donationTitle.textContent = t.donationTitle;
+        if (donationText) donationText.textContent = t.donationText;
+        if (contactTitle) contactTitle.textContent = t.contactTitle;
+        if (contactText) contactText.textContent = t.contactText;
+      }
+
+      function setLanguage(lang) {
+        console.log('Setting language to:', lang); // Debug log
+        currentLang = lang;
+        updateContent(lang);
+        
+        // Update button states
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('selected'));
+        const selectedBtn = document.getElementById(`lang-${lang}`);
+        if (selectedBtn) selectedBtn.classList.add('selected');
+      }
+
+      // Wait for DOM to be fully loaded
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM loaded, setting up language buttons'); // Debug log
+        
+        const enBtn = document.getElementById('lang-en');
+        const ptBtn = document.getElementById('lang-pt');
+        
+        if (enBtn) {
+          enBtn.addEventListener('click', function() {
+            console.log('EN button clicked'); // Debug log
+            setLanguage('en');
+          });
+        }
+        
+        if (ptBtn) {
+          ptBtn.addEventListener('click', function() {
+            console.log('PT button clicked'); // Debug log
+            setLanguage('pt');
+          });
+        }
+        
+        // Initialize with English
+        setLanguage('en');
+        
+        // Set up copy button functionality
+        const copyBtn = document.getElementById('copy-btn');
+        const bitcoinAddress = document.getElementById('bitcoin-address');
+        
+        if (copyBtn && bitcoinAddress) {
+          copyBtn.addEventListener('click', function() {
+            const address = bitcoinAddress.textContent;
+            navigator.clipboard.writeText(address).then(function() {
+              copyBtn.textContent = 'Copied!';
+              copyBtn.classList.add('copied');
+              setTimeout(function() {
+                copyBtn.textContent = 'Copy';
+                copyBtn.classList.remove('copied');
+              }, 2000);
+            }).catch(function() {
+              // Fallback for older browsers
+              const textArea = document.createElement('textarea');
+              textArea.value = address;
+              document.body.appendChild(textArea);
+              textArea.select();
+              document.execCommand('copy');
+              document.body.removeChild(textArea);
+              copyBtn.textContent = 'Copied!';
+              copyBtn.classList.add('copied');
+              setTimeout(function() {
+                copyBtn.textContent = 'Copy';
+                copyBtn.classList.remove('copied');
+              }, 2000);
+            });
+          });
+        }
+      });
+    </script>
+  
+</body></html>
