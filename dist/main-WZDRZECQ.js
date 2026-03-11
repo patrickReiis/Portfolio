@@ -2772,7 +2772,7 @@ function ce4(t2) {
 }
 
 // fs:/projects/portfolio/src/App.vue
-var App_default = "./App-UCADZL3Q.vue";
+var App_default = "./App-5GXKA7V5.vue";
 
 // esm:https://esm.sh/node/buffer.mjs
 function ut2(t2) {
@@ -6257,4 +6257,4 @@ vue-router/dist/vue-router.mjs:
    * @license MIT
    *)
 */
-//# sourceMappingURL=main-47OGXMSD.js.map
+//# sourceMappingURL=main-WZDRZECQ.js.map

@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router';
-import HomeUnified from '../HomeUnified.vue';
+import Home from '../Home.vue';
 import DetailedProjectVue from '../DetailedProject.vue';
 import NotFound from '../NotFound.vue';
 
@@ -7,22 +7,11 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: HomeUnified
-  },
-  {
-    path: '/pt',
-    name: 'HomePt',
-    component: HomeUnified
+    component: Home
   },
   {
     path: '/home/:id',
     name: 'DetailedProject',
-    component: DetailedProjectVue,
-    props: true
-  },
-  {
-    path: '/home-pt/:id',
-    name: 'DetailedProjectPt',
     component: DetailedProjectVue,
     props: true
   },

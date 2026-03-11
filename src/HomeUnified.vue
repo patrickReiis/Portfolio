@@ -1,50 +1,55 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import type { Ref } from "vue";
 import type { Project } from "./customTypes";
 import database from "../db/projects.json";
-import ProjectFooter from "./ProjectFooter.vue";
+import ProjectFooterUnified from "./ProjectFooterUnified.vue";
 import Division from "./Division.vue";
-import Footer from "./Footer.vue";
+import FooterUnified from "./FooterUnified.vue";
+import { useLanguage } from "./composables/useLanguage";
 
+const { t, getCurrentLanguage } = useLanguage();
 const projectsList: Ref<Project[]> = ref([]);
 
 async function postsResolve() {
   const db = database as { en: Project[]; pt: Project[] };
-  projectsList.value = db["en"] as Project[];
+  projectsList.value = db[getCurrentLanguage.value] as Project[];
 }
+
+// Watch for language changes and update projects
+watch(getCurrentLanguage, () => {
+  postsResolve();
+});
 
 postsResolve();
 </script>
 
 <template>
   <header class="general-container">
-    <h2 class="title">ABOUT ME</h2>
+    <h2 class="title">{{ t.title.aboutMe }}</h2>
     <div class="about-me-content">
-      <p>
-        I used to be an open source developer but I decided to quit it to become a singer. I write my own lyrics and I have my own genre, and I explore different genres (such as rap, rock, eurodance, brazilian funk, R&B, gospel, pagode, arrocha, etc).
-      </p>
+      <p v-html="t.about.description"></p>
     </div>
   </header>
 
   <!-- Music Platforms Section -->
   <main class="general-container">
-    <h2 class="title project-title">MUSIC PLATFORMS</h2>
+    <h2 class="title project-title">{{ t.title.projects }}</h2>
     <div class="music-platforms-container">
       <div class="platform-item">
-        <a href="https://open.spotify.com/artist/0l9mI7bCNJXEJg0Sa6b5Zk" target="_blank" class="platform-link spotify">
+        <a :href="'https://open.spotify.com/artist/0l9mI7bCNJXEJg0Sa6b5Zk'" target="_blank" class="platform-link spotify">
           <svg class="platform-icon" viewBox="0 0 24 24" width="30" height="30">
             <path fill="#1DB954" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.32 11.28-1.08 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
           </svg>
-          Listen on Spotify
+          {{ t.music.spotify }}
         </a>
       </div>
       <div class="platform-item">
-        <a href="https://www.youtube.com/@patrick_preis" target="_blank" class="platform-link youtube">
+        <a :href="'https://www.youtube.com/@patrick_preis'" target="_blank" class="platform-link youtube">
           <svg class="platform-icon" viewBox="0 0 24 24" width="30" height="30">
             <path fill="#FF0000" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
           </svg>
-          Watch on YouTube
+          {{ t.music.youtube }}
         </a>
       </div>
       <div class="platform-item">
@@ -59,39 +64,41 @@ postsResolve();
 
     <!-- Bitcoin Donation Section -->
     <div class="donation-section">
-      <h3 class="donation-title">Support My Music</h3>
-      <p class="donation-text">I'm an independent artist. Support my journey with Bitcoin:</p>
+      <h3 class="donation-title">{{ t.music.donation }}</h3>
+      <p class="donation-text">{{ t.music.donationText }}</p>
       <div class="bitcoin-address">
         <code>bc1qtr4ju5r0wnn06ld92zgalvrw477s65q2u470ar</code>
       </div>
     </div>
 
     <!-- Nostalgic Proof Section (Former Developer Work) -->
-    <h2 class="title project-title nostalgia-title">NOSTALGIC PROOF</h2>
-    <p class="nostalgia-description">My past as a developer - keeping these as memories of my coding journey:</p>
+    <h2 class="title project-title nostalgia-title">{{ t.nostalgia.title }}</h2>
+    <p class="nostalgia-description">{{ t.nostalgia.description }}</p>
     <div class="open-source-container nostalgia-container">
       <div class="open-source-project">
         <p class="open-source-project-title">
-          InterPlanetary File System (IPFS)
+          {{ t.openSource.ipfs.title }}
         </p>
         <ul>
-          <li>Fixed two issues and wrote tests from scratch using the Go Programming Language.</li>
-          <li>+117 lines added and -1 line removed.</li>
+          <li v-for="desc in t.openSource.ipfs.description" :key="desc">
+            {{ desc }}
+          </li>
           <li>
             <a href="https://github.com/ipfs/kubo/pull/10143" target="_blank">
-              See Pull Request
+              {{ t.openSource.ipfs.link }}
             </a>
           </li>
         </ul>
       </div>
       <div class="open-source-project">
-        <p class="open-source-project-title">Monero Wallet Generator</p>
+        <p class="open-source-project-title">{{ t.openSource.monero.title }}</p>
         <ul>
-          <li>Improved user experience with a toggleable styled QR Code using JavaScript and CSS.</li>
-          <li>+30 lines added and 0 line removed.</li>
+          <li v-for="desc in t.openSource.monero.description" :key="desc">
+            {{ desc }}
+          </li>
           <li>
             <a href="https://github.com/moneromooo-monero/monero-wallet-generator/pull/31" target="_blank">
-              See Pull Request
+              {{ t.openSource.monero.link }}
             </a>
           </li>
         </ul>
@@ -122,7 +129,7 @@ postsResolve();
       </div>
     </div>
   </main>
-  <Footer />
+  <FooterUnified />
 </template>
 
 <style scoped>

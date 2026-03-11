@@ -67,16 +67,7 @@ function switchLanguage(lang: 'en' | 'pt') {
 </script>
 
 <style scoped>
-.language-container {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  z-index: 1;
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 0.5rem;
-}
+
 
 #patrick {
   font-size: 5.5rem;

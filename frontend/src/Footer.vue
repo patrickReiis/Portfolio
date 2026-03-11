@@ -3,18 +3,18 @@
 <template>
   <footer class="footer-contact general-container">
     <div class="contact-container">
-      <h2 class="title contact-title">CONTACT</h2>
+      <h2 class="title contact-title">CONNECT WITH ME</h2>
       <div class="contact-content">
         <p>
           Contact me at patrickpereirareal1@gmail.com
           <br />
-          I am also open to freelance work.
+          I am an independent artist open to collaborations.
         </p>
         <div class="linkedin-container">
           📄<a
             href="https://drive.google.com/file/d/10EEpL6ehDmePN424uQrAiUPDKW69z64h/view?usp=share_link"
             target="_blank"
-            >Résumé</a
+            >Music Portfolio</a
           >
           <br />
           <div>
