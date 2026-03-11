@@ -79,15 +79,21 @@
 
       .my-name {
         color: var(--main-font-color);
-        font-size: 5rem;
+        font-size: 4.5rem;
         font-weight: 700;
         line-height: 1;
         margin: 0 auto;
         cursor: pointer;
+        display: inline;
       }
 
-      .my-name:first-child {
-        font-size: 5.5rem;
+      .my-name-container {
+        white-space: nowrap;
+        margin-bottom: 3rem;
+      }
+
+      .my-name:first-child::after {
+        content: " ";
       }
 
       /* General container */
@@ -108,14 +114,14 @@
       .project-title {
         border-bottom: 3px solid var(--main-font-color);
         width: fit-content;
-        margin: 0.5rem auto;
+        margin: 3rem auto 2rem auto;
         font-size: 2.7rem;
         font-weight: 700;
       }
 
       /* About section */
       header {
-        margin: 3rem auto;
+        margin: 4rem auto;
       }
 
       .about-me-content {
@@ -212,6 +218,11 @@
         padding: 1rem;
         border-radius: 0.5rem;
         border: 1px solid var(--division-surround-color);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        justify-content: space-between;
+        flex-wrap: wrap;
       }
 
       .bitcoin-address code {
@@ -219,6 +230,28 @@
         font-size: 1.1rem;
         font-weight: bold;
         word-break: break-all;
+        flex: 1;
+      }
+
+      .copy-btn {
+        background: var(--division-surround-color);
+        border: none;
+        color: var(--background-color);
+        padding: 0.5rem 1rem;
+        border-radius: 0.3rem;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+      }
+
+      .copy-btn:hover {
+        background: var(--main-font-color);
+      }
+
+      .copy-btn.copied {
+        background: #4CAF50;
+        color: white;
       }
 
 
@@ -264,16 +297,17 @@
       }
 
       @media screen and (min-width: 0px) and (max-width: 700px) {
-        .my-name:first-child {
-          font-size: 4.5rem;
-        }
-
         .my-name {
-          font-size: 4rem;
+          font-size: 3.5rem;
         }
 
         .my-name-container {
           margin-top: 3rem;
+        }
+
+        .bitcoin-address {
+          flex-direction: column;
+          gap: 0.5rem;
         }
       }
     </style>
@@ -281,8 +315,7 @@
   <body>
     <nav class="nav-app">
       <div class="my-name-container">
-        <h1 class="my-name">PATRICK</h1>
-        <h1 class="my-name">PREIS</h1>
+        <h1 class="my-name">PATRICK</h1><h1 class="my-name">PREIS</h1>
       </div>
       <div class="language-container">
         <button id="lang-en" class="lang-btn selected">🇺🇸 EN</button>
@@ -300,7 +333,7 @@
     </header>
 
     <main class="general-container">
-      <h2 id="platforms-title" class="title project-title">MUSIC PLATFORMS</h2>
+      <h2 id="platforms-title" class="title project-title">LISTEN TO MY SONGS AT:</h2>
       <div class="music-platforms-container">
         <div class="platform-item">
           <a href="https://open.spotify.com/artist/0l9mI7bCNJXEJg0Sa6b5Zk" target="_blank" class="platform-link spotify">
@@ -333,7 +366,8 @@
         <h3 id="donation-title" class="donation-title">Support My Music</h3>
         <p id="donation-text" class="donation-text">I'm an independent artist. Support my journey with Bitcoin:</p>
         <div class="bitcoin-address">
-          <code>bc1qtr4ju5r0wnn06ld92zgalvrw477s65q2u470ar</code>
+          <code id="bitcoin-address">bc1qtr4ju5r0wnn06ld92zgalvrw477s65q2u470ar</code>
+          <button id="copy-btn" class="copy-btn">Copy</button>
         </div>
       </div>
 
@@ -359,7 +393,7 @@
         en: {
           aboutTitle: 'ABOUT ME',
           aboutText: 'I am an independent musician from Brazil who explores multiple musical genres, from rap and rock to Brazilian funk, R&B, gospel, and electronic music. I write my own lyrics and create original compositions that blend different styles to tell authentic stories. Music is my passion and my way of connecting with the world.',
-          platformsTitle: 'MUSIC PLATFORMS',
+          platformsTitle: 'LISTEN TO MY SONGS AT:',
           spotify: 'Listen on Spotify',
           youtube: 'Watch on YouTube',
           nostr: 'Nostr Profile',
@@ -371,7 +405,7 @@
         pt: {
           aboutTitle: 'SOBRE MIM',
           aboutText: 'Sou um músico independente do Brasil que explora múltiplos gêneros musicais, desde rap e rock até funk brasileiro, R&B, gospel e música eletrônica. Escrevo minhas próprias letras e crio composições originais que misturam diferentes estilos para contar histórias autênticas. A música é minha paixão e minha forma de me conectar com o mundo.',
-          platformsTitle: 'PLATAFORMAS MUSICAIS',
+          platformsTitle: 'OUÇA MINHAS MÚSICAS EM:',
           spotify: 'Ouça no Spotify',
           youtube: 'Assista no YouTube',
           nostr: 'Perfil Nostr',
@@ -446,6 +480,38 @@
         
         // Initialize with English
         setLanguage('en');
+        
+        // Set up copy button functionality
+        const copyBtn = document.getElementById('copy-btn');
+        const bitcoinAddress = document.getElementById('bitcoin-address');
+        
+        if (copyBtn && bitcoinAddress) {
+          copyBtn.addEventListener('click', function() {
+            const address = bitcoinAddress.textContent;
+            navigator.clipboard.writeText(address).then(function() {
+              copyBtn.textContent = 'Copied!';
+              copyBtn.classList.add('copied');
+              setTimeout(function() {
+                copyBtn.textContent = 'Copy';
+                copyBtn.classList.remove('copied');
+              }, 2000);
+            }).catch(function() {
+              // Fallback for older browsers
+              const textArea = document.createElement('textarea');
+              textArea.value = address;
+              document.body.appendChild(textArea);
+              textArea.select();
+              document.execCommand('copy');
+              document.body.removeChild(textArea);
+              copyBtn.textContent = 'Copied!';
+              copyBtn.classList.add('copied');
+              setTimeout(function() {
+                copyBtn.textContent = 'Copy';
+                copyBtn.classList.remove('copied');
+              }, 2000);
+            });
+          });
+        }
       });
     </script>
   </body>
